@@ -1,0 +1,1609 @@
+{
+ "markets": [
+  {
+   "id": "518586",
+   "question": "Trump positive favorability on March 1?",
+   "conditionId": "0x4a80bba57ff577f82b3d1f1efb1bef3656a8467fd95ee1b897ef4d892e68a4b7",
+   "slug": "trump-positive-favorability-on-march-1",
+   "endDate": "2025-03-01T12:00:00Z",
+   "startDate": "2025-01-14T22:47:33.017Z",
+   "createdAt": "2025-01-14T22:02:53.854246Z",
+   "closedTime": "2025-03-03 18:30:50+00",
+   "acceptingOrdersTimestamp": "2025-01-14T22:46:28Z",
+   "outcomes": "[\"Yes\", \"No\"]",
+   "outcomePrices": "[\"0\", \"1\"]",
+   "clobTokenIds": "[\"107041951256513952827583592753858674811677450762848027889074798217804157437441\", \"99206170229958435670673809283061719880817500362743677373765518303035754866654\"]",
+   "volumeNum": 113854.212783,
+   "enableOrderBook": true,
+   "negRisk": false,
+   "negRiskOther": false,
+   "groupItemTitle": "",
+   "umaResolutionStatus": "resolved",
+   "closed": true,
+   "tags": [
+    {
+     "id": "101191",
+     "label": "Trump Presidency",
+     "slug": "trump-presidency"
+    },
+    {
+     "id": "100264",
+     "label": "538",
+     "slug": "538"
+    },
+    {
+     "id": "977",
+     "label": "polls",
+     "slug": "polls"
+    },
+    {
+     "id": "100386",
+     "label": "Polling",
+     "slug": "polling"
+    },
+    {
+     "id": "2",
+     "label": "Politics",
+     "slug": "politics"
+    },
+    {
+     "id": "101696",
+     "label": "approve",
+     "slug": "approve"
+    },
+    {
+     "id": "101697",
+     "label": "Approval",
+     "slug": "approval"
+    },
+    {
+     "id": "100828",
+     "label": "fivethityeight",
+     "slug": "fivethityeight"
+    },
+    {
+     "id": "101757",
+     "label": "Recurring",
+     "slug": "recurring"
+    },
+    {
+     "id": "126",
+     "label": "Trump",
+     "slug": "trump"
+    }
+   ],
+   "events": [
+    {
+     "id": "16760",
+     "title": "Trump positive favorability on March 1?",
+     "slug": "trump-positive-favorability-on-march-1",
+     "seriesSlug": "trump-positive-favorability",
+     "endDate": "2025-03-01T12:00:00Z",
+     "negRiskAugmented": false,
+     "closed": true,
+     "series": [
+      {
+       "id": "10034",
+       "slug": "trump-positive-favorability",
+       "recurrence": "monthly"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "3743676",
+   "question": "Minnesota Twins vs. Athletics",
+   "conditionId": "0xc393da485cd2e1dd53547aee6c28f838da9b2a5e4dc9b4ada64b32e2b4c67026",
+   "slug": "mlb-min-oak-2026-08-26",
+   "endDate": "2026-09-03T01:05:00Z",
+   "startDate": "2026-08-20T13:00:45Z",
+   "createdAt": "2026-08-20T13:00:35.354227Z",
+   "closedTime": "2026-08-27 03:48:36+00",
+   "acceptingOrdersTimestamp": "2026-08-20T13:00:45Z",
+   "gameStartTime": "2026-08-27 01:05:00+00",
+   "sportsMarketType": "moneyline",
+   "outcomes": "[\"Minnesota Twins\", \"Athletics\"]",
+   "outcomePrices": "[\"0\", \"1\"]",
+   "clobTokenIds": "[\"31622500097604210531321625476637586419520037933667973093033739574967243559135\", \"17148361803156335349041174628321462268770346518899311333302145078276486728179\"]",
+   "volumeNum": 1044036.5492240003,
+   "enableOrderBook": true,
+   "negRisk": false,
+   "negRiskOther": false,
+   "umaResolutionStatus": "resolved",
+   "closed": true,
+   "tags": [
+    {
+     "id": "1",
+     "label": "Sports",
+     "slug": "sports"
+    },
+    {
+     "id": "100639",
+     "label": "Games",
+     "slug": "games"
+    },
+    {
+     "id": "100381",
+     "label": "MLB",
+     "slug": "mlb"
+    },
+    {
+     "id": "678",
+     "label": "baseball",
+     "slug": "baseball"
+    }
+   ],
+   "events": [
+    {
+     "id": "880639",
+     "title": "Minnesota Twins vs. Athletics",
+     "slug": "mlb-min-oak-2026-08-26",
+     "seriesSlug": "mlb",
+     "startTime": "2026-08-27T01:05:00Z",
+     "eventDate": "2026-08-26",
+     "endDate": "2026-09-03T01:05:00Z",
+     "negRisk": false,
+     "negRiskAugmented": false,
+     "closed": true,
+     "gameId": 10079293,
+     "series": [
+      {
+       "id": "3",
+       "slug": "mlb",
+       "recurrence": "daily"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "3035500",
+   "question": "Spread: CD Limache (-1.5)",
+   "conditionId": "0x318eace84c6d4196d37192085c9132e53325f5a5cc36f96249c2145da78e276f",
+   "slug": "chi1-cdl-cdu-2026-08-01-spread-home-1pt5",
+   "endDate": "2026-09-03T00:30:00Z",
+   "startDate": "2026-07-22T20:18:02.614877Z",
+   "createdAt": "2026-07-22T19:16:54.575893Z",
+   "closedTime": "2026-09-03 06:30:36+00",
+   "acceptingOrdersTimestamp": "2026-07-22T20:17:15Z",
+   "gameStartTime": "2026-09-03 00:30:00+00",
+   "sportsMarketType": "spreads",
+   "outcomes": "[\"CD Limache\", \"CD Ñublense\"]",
+   "outcomePrices": "[\"1\", \"0\"]",
+   "clobTokenIds": "[\"72496971803409309167943751198986915821387113829613451636067544199936025470258\", \"73992424812071183219935884136950756615672891219964002209512275832112123263975\"]",
+   "volumeNum": 4213.426748,
+   "enableOrderBook": true,
+   "negRisk": false,
+   "negRiskOther": false,
+   "groupItemTitle": "CD Limache (-1.5)",
+   "umaResolutionStatus": "resolved",
+   "closed": true,
+   "line": -1.5,
+   "tags": [
+    {
+     "id": "1",
+     "label": "Sports",
+     "slug": "sports"
+    },
+    {
+     "id": "100639",
+     "label": "Games",
+     "slug": "games"
+    },
+    {
+     "id": "100350",
+     "label": "Soccer",
+     "slug": "soccer"
+    }
+   ],
+   "events": [
+    {
+     "id": "734196",
+     "title": "CD Limache vs. CD Ñublense - More Markets",
+     "slug": "chi1-cdl-cdu-2026-08-01-more-markets",
+     "seriesSlug": "primera-division",
+     "startTime": "2026-09-03T00:30:00Z",
+     "eventDate": "2026-09-02",
+     "endDate": "2026-09-03T00:30:00Z",
+     "negRisk": false,
+     "negRiskAugmented": false,
+     "closed": true,
+     "gameId": 90105687,
+     "series": [
+      {
+       "id": "10965",
+       "slug": "primera-division",
+       "recurrence": "daily"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "3035504",
+   "question": "CD Limache vs. CD Ñublense: O/U 0.5",
+   "conditionId": "0x648d709725074b6d2ae723832bda0202964a2d235f1adc681761f90e953e232b",
+   "slug": "chi1-cdl-cdu-2026-08-01-total-0pt5",
+   "endDate": "2026-09-03T00:30:00Z",
+   "startDate": "2026-07-22T20:59:04.624534Z",
+   "createdAt": "2026-07-22T19:16:56.481986Z",
+   "closedTime": "2026-09-03 06:30:48+00",
+   "acceptingOrdersTimestamp": "2026-07-22T20:58:16Z",
+   "gameStartTime": "2026-09-03 00:30:00+00",
+   "sportsMarketType": "totals",
+   "outcomes": "[\"Over\", \"Under\"]",
+   "outcomePrices": "[\"1\", \"0\"]",
+   "clobTokenIds": "[\"26246464204697947722116794914285201961145902129307018622067417685242641772232\", \"93962730166650046885533241604344895607333844322635489619670727265417840623872\"]",
+   "volumeNum": 1072.46859,
+   "enableOrderBook": true,
+   "negRisk": false,
+   "negRiskOther": false,
+   "groupItemTitle": "O/U 0.5",
+   "umaResolutionStatus": "resolved",
+   "closed": true,
+   "line": 0.5,
+   "tags": [
+    {
+     "id": "1",
+     "label": "Sports",
+     "slug": "sports"
+    },
+    {
+     "id": "100639",
+     "label": "Games",
+     "slug": "games"
+    },
+    {
+     "id": "100350",
+     "label": "Soccer",
+     "slug": "soccer"
+    }
+   ],
+   "events": [
+    {
+     "id": "734196",
+     "title": "CD Limache vs. CD Ñublense - More Markets",
+     "slug": "chi1-cdl-cdu-2026-08-01-more-markets",
+     "seriesSlug": "primera-division",
+     "startTime": "2026-09-03T00:30:00Z",
+     "eventDate": "2026-09-02",
+     "endDate": "2026-09-03T00:30:00Z",
+     "negRisk": false,
+     "negRiskAugmented": false,
+     "closed": true,
+     "gameId": 90105687,
+     "series": [
+      {
+       "id": "10965",
+       "slug": "primera-division",
+       "recurrence": "daily"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "2992279",
+   "question": "Will CD Limache win on 2026-08-01?",
+   "conditionId": "0x488a263100a3b1c855d8ca555f19b509bce173ac45a2abc463f29b951d06bce3",
+   "slug": "chi1-cdl-cdu-2026-08-01-cdl",
+   "endDate": "2026-09-03T00:30:00Z",
+   "startDate": "2026-07-19T19:02:20Z",
+   "createdAt": "2026-07-19T19:00:39.842245Z",
+   "closedTime": "2026-09-03 06:30:49+00",
+   "acceptingOrdersTimestamp": "2026-07-19T19:02:20Z",
+   "gameStartTime": "2026-09-03 00:30:00+00",
+   "sportsMarketType": "moneyline",
+   "outcomes": "[\"Yes\", \"No\"]",
+   "outcomePrices": "[\"1\", \"0\"]",
+   "clobTokenIds": "[\"75113543568517292971972504652362934460203032318020250241280320101603750574312\", \"65463644816188900211750858909199983617320347794047406153957955772820017063100\"]",
+   "volumeNum": 78148.34117399994,
+   "enableOrderBook": true,
+   "negRisk": true,
+   "negRiskMarketID": "0xa78e98a8fc81e99732f3678e21004897a7273991ade8e43cd8a9a3a1be54ef00",
+   "negRiskOther": false,
+   "groupItemTitle": "CD Limache",
+   "umaResolutionStatus": "resolved",
+   "closed": true,
+   "tags": [
+    {
+     "id": "1",
+     "label": "Sports",
+     "slug": "sports"
+    },
+    {
+     "id": "100639",
+     "label": "Games",
+     "slug": "games"
+    },
+    {
+     "id": "100350",
+     "label": "Soccer",
+     "slug": "soccer"
+    }
+   ],
+   "events": [
+    {
+     "id": "722599",
+     "title": "CD Limache vs. CD Ñublense",
+     "slug": "chi1-cdl-cdu-2026-08-01",
+     "seriesSlug": "primera-division",
+     "startTime": "2026-09-03T00:30:00Z",
+     "eventDate": "2026-09-02",
+     "endDate": "2026-09-03T00:30:00Z",
+     "negRisk": true,
+     "negRiskAugmented": false,
+     "closed": true,
+     "gameId": 90105687,
+     "series": [
+      {
+       "id": "10965",
+       "slug": "primera-division",
+       "recurrence": "daily"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "2992281",
+   "question": "Will CD Limache vs. CD Ñublense end in a draw?",
+   "conditionId": "0xc7e34ee28a70232ccca09e6d59a1f85055db3e277bdf75684d9fa49b2d53459c",
+   "slug": "chi1-cdl-cdu-2026-08-01-draw",
+   "endDate": "2026-09-03T00:30:00Z",
+   "startDate": "2026-07-19T19:02:20Z",
+   "createdAt": "2026-07-19T19:00:40.007523Z",
+   "closedTime": "2026-09-03 06:30:49+00",
+   "acceptingOrdersTimestamp": "2026-07-19T19:02:20Z",
+   "gameStartTime": "2026-09-03 00:30:00+00",
+   "sportsMarketType": "moneyline",
+   "outcomes": "[\"Yes\", \"No\"]",
+   "outcomePrices": "[\"0\", \"1\"]",
+   "clobTokenIds": "[\"77386397601647762656132012501368410403017021712755973219252875962210195940897\", \"91268114582986576481013132721557149320394461319643693693067021089827865088559\"]",
+   "volumeNum": 5858.346807000001,
+   "enableOrderBook": true,
+   "negRisk": true,
+   "negRiskMarketID": "0xa78e98a8fc81e99732f3678e21004897a7273991ade8e43cd8a9a3a1be54ef00",
+   "negRiskOther": false,
+   "groupItemTitle": "Draw (CD Limache vs. CD Ñublense)",
+   "umaResolutionStatus": "resolved",
+   "closed": true,
+   "tags": [
+    {
+     "id": "1",
+     "label": "Sports",
+     "slug": "sports"
+    },
+    {
+     "id": "100639",
+     "label": "Games",
+     "slug": "games"
+    },
+    {
+     "id": "100350",
+     "label": "Soccer",
+     "slug": "soccer"
+    }
+   ],
+   "events": [
+    {
+     "id": "722599",
+     "title": "CD Limache vs. CD Ñublense",
+     "slug": "chi1-cdl-cdu-2026-08-01",
+     "seriesSlug": "primera-division",
+     "startTime": "2026-09-03T00:30:00Z",
+     "eventDate": "2026-09-02",
+     "endDate": "2026-09-03T00:30:00Z",
+     "negRisk": true,
+     "negRiskAugmented": false,
+     "closed": true,
+     "gameId": 90105687,
+     "series": [
+      {
+       "id": "10965",
+       "slug": "primera-division",
+       "recurrence": "daily"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "2992282",
+   "question": "Will CD Ñublense win on 2026-08-01?",
+   "conditionId": "0xf90ba09ca400c42a3e5db2fa2a6403366f71e13e228cfcaf1126bccd5be89d60",
+   "slug": "chi1-cdl-cdu-2026-08-01-cdu",
+   "endDate": "2026-09-03T00:30:00Z",
+   "startDate": "2026-07-19T19:02:20Z",
+   "createdAt": "2026-07-19T19:00:40.17017Z",
+   "closedTime": "2026-09-03 06:31:31+00",
+   "acceptingOrdersTimestamp": "2026-07-19T19:02:20Z",
+   "gameStartTime": "2026-09-03 00:30:00+00",
+   "sportsMarketType": "moneyline",
+   "outcomes": "[\"Yes\", \"No\"]",
+   "outcomePrices": "[\"0\", \"1\"]",
+   "clobTokenIds": "[\"20515818729061060938445979671559180871622030472164764774158724412721252210723\", \"11841220788470419740149950076065065765904539171486866584948762176547689848428\"]",
+   "volumeNum": 28625.61422100001,
+   "enableOrderBook": true,
+   "negRisk": true,
+   "negRiskMarketID": "0xa78e98a8fc81e99732f3678e21004897a7273991ade8e43cd8a9a3a1be54ef00",
+   "negRiskOther": false,
+   "groupItemTitle": "CD Ñublense",
+   "umaResolutionStatus": "resolved",
+   "closed": true,
+   "tags": [
+    {
+     "id": "1",
+     "label": "Sports",
+     "slug": "sports"
+    },
+    {
+     "id": "100639",
+     "label": "Games",
+     "slug": "games"
+    },
+    {
+     "id": "100350",
+     "label": "Soccer",
+     "slug": "soccer"
+    }
+   ],
+   "events": [
+    {
+     "id": "722599",
+     "title": "CD Limache vs. CD Ñublense",
+     "slug": "chi1-cdl-cdu-2026-08-01",
+     "seriesSlug": "primera-division",
+     "startTime": "2026-09-03T00:30:00Z",
+     "eventDate": "2026-09-02",
+     "endDate": "2026-09-03T00:30:00Z",
+     "negRisk": true,
+     "negRiskAugmented": false,
+     "closed": true,
+     "gameId": 90105687,
+     "series": [
+      {
+       "id": "10965",
+       "slug": "primera-division",
+       "recurrence": "daily"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "4529742",
+   "question": "Will the highest temperature in Paris be 27°C on September 15?",
+   "conditionId": "0xd0b3534c35d22d7db84294124254b64182b2455991f5d29dd1ba4c6b7484265d",
+   "slug": "highest-temperature-in-paris-on-september-15-2026-27c",
+   "endDate": "2026-09-15T12:00:00Z",
+   "startDate": "2026-09-13T16:56:13Z",
+   "createdAt": "2026-09-13T16:55:52.547731Z",
+   "closedTime": "2026-09-15 22:22:40+00",
+   "acceptingOrdersTimestamp": "2026-09-13T16:56:13Z",
+   "gameStartTime": "2026-09-14 22:00:00+00",
+   "outcomes": "[\"Yes\", \"No\"]",
+   "outcomePrices": "[\"0\", \"1\"]",
+   "clobTokenIds": "[\"71860575447567637139177275254731641900941021374999662131649253376265885955706\", \"94291377026889818394439418216146940013839755290731560074463007479651989398732\"]",
+   "volumeNum": 1583.241,
+   "enableOrderBook": true,
+   "negRisk": true,
+   "negRiskMarketID": "0x7b4018805e4c0f37aecde4960c3b0ca762ba6ae3fb91ebb029c5088e85239900",
+   "negRiskOther": false,
+   "groupItemTitle": "27°C",
+   "umaResolutionStatus": "resolved",
+   "closed": true,
+   "tags": [
+    {
+     "id": "84",
+     "label": "Weather",
+     "slug": "weather"
+    },
+    {
+     "id": "101757",
+     "label": "Recurring",
+     "slug": "recurring"
+    },
+    {
+     "id": "102169",
+     "label": "Hide From New",
+     "slug": "hide-from-new"
+    },
+    {
+     "id": "103730",
+     "label": "Paris",
+     "slug": "paris"
+    },
+    {
+     "id": "1378",
+     "label": "France",
+     "slug": "france"
+    },
+    {
+     "id": "103040",
+     "label": "Daily Temperature",
+     "slug": "daily-temperature"
+    },
+    {
+     "id": "104596",
+     "label": "Highest temperature",
+     "slug": "highest-temperature"
+    }
+   ],
+   "events": [
+    {
+     "id": "1017810",
+     "title": "Highest temperature in Paris on September 15?",
+     "slug": "highest-temperature-in-paris-on-september-15-2026",
+     "seriesSlug": "paris-daily-weather",
+     "startTime": "2026-09-13T16:55:52.18Z",
+     "eventDate": "2026-09-15",
+     "endDate": "2026-09-15T12:00:00Z",
+     "negRisk": true,
+     "negRiskAugmented": false,
+     "closed": true,
+     "series": [
+      {
+       "id": "11168",
+       "slug": "paris-daily-weather",
+       "recurrence": "daily"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "4523144",
+   "question": "Bitcoin Up or Down - September 15, 7AM ET",
+   "conditionId": "0x0340ce1bca77df2d841bddc43effa2ea98cc30546d7f924942b87944081286fa",
+   "slug": "bitcoin-up-or-down-september-15-2026-7am-et",
+   "endDate": "2026-09-15T12:00:00Z",
+   "startDate": "2026-09-13T11:00:11Z",
+   "createdAt": "2026-09-13T11:00:00.498582Z",
+   "closedTime": "2026-09-15 12:11:30+00",
+   "acceptingOrdersTimestamp": "2026-09-13T11:00:11Z",
+   "outcomes": "[\"Up\", \"Down\"]",
+   "outcomePrices": "[\"0\", \"1\"]",
+   "clobTokenIds": "[\"58258067481119781278426013535209165559816022843404391274557355103719497153461\", \"83391183175969821137498824884639826717578243376626369993656666323885829932899\"]",
+   "volumeNum": 42465.810217000006,
+   "enableOrderBook": true,
+   "negRisk": false,
+   "negRiskOther": false,
+   "umaResolutionStatus": "resolved",
+   "closed": true,
+   "tags": [
+    {
+     "id": "21",
+     "label": "Crypto",
+     "slug": "crypto"
+    },
+    {
+     "id": "1312",
+     "label": "Crypto Prices",
+     "slug": "crypto-prices"
+    },
+    {
+     "id": "101757",
+     "label": "Recurring",
+     "slug": "recurring"
+    },
+    {
+     "id": "102169",
+     "label": "Hide From New",
+     "slug": "hide-from-new"
+    },
+    {
+     "id": "235",
+     "label": "Bitcoin",
+     "slug": "bitcoin"
+    },
+    {
+     "id": "102175",
+     "label": "1H",
+     "slug": "1H"
+    },
+    {
+     "id": "102127",
+     "label": "Up or Down",
+     "slug": "up-or-down"
+    }
+   ],
+   "events": [
+    {
+     "id": "1016325",
+     "title": "Bitcoin Up or Down - September 15, 7AM ET",
+     "slug": "bitcoin-up-or-down-september-15-2026-7am-et",
+     "seriesSlug": "btc-up-or-down-hourly",
+     "endDate": "2026-09-15T12:00:00Z",
+     "negRisk": false,
+     "negRiskAugmented": false,
+     "closed": true,
+     "series": [
+      {
+       "id": "10114",
+       "slug": "btc-up-or-down-hourly",
+       "recurrence": "hourly"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "623595",
+   "question": "Will the Government shutdown end before October 15?",
+   "conditionId": "0x51c3455dd5be1637b7a242acc8846664dabb9dea666ad4074057d55168a60639",
+   "slug": "will-the-government-shutdown-end-before-october-15",
+   "endDate": "2025-11-15T00:00:00Z",
+   "startDate": "2025-10-06T17:18:09.944Z",
+   "createdAt": "2025-10-06T17:08:43.328841Z",
+   "closedTime": "2025-10-15 09:17:31+00",
+   "acceptingOrdersTimestamp": "2025-10-06T17:17:48Z",
+   "gameStartTime": "2025-11-13 06:18:00+00",
+   "outcomes": "[\"Yes\", \"No\"]",
+   "outcomePrices": "[\"0\", \"1\"]",
+   "clobTokenIds": "[\"13130724476179384163228374270864376921777364897641165890988624035370941965484\", \"82228381431688214380614621987054499564491811967568589651160211188367177553131\"]",
+   "volumeNum": 107644.813115,
+   "enableOrderBook": true,
+   "negRisk": true,
+   "negRiskMarketID": "0x425fcdb7c350c6e04e84a5b8c200a3959f81517d17028c0ca5c041c073c75400",
+   "negRiskOther": false,
+   "groupItemTitle": "Before October 15",
+   "umaResolutionStatus": "resolved",
+   "closed": true,
+   "tags": [
+    {
+     "id": "126",
+     "label": "Trump",
+     "slug": "trump"
+    },
+    {
+     "id": "596",
+     "label": "Culture",
+     "slug": "pop-culture"
+    },
+    {
+     "id": "101191",
+     "label": "Trump Presidency",
+     "slug": "trump-presidency"
+    },
+    {
+     "id": "101542",
+     "label": "Gov Shutdown",
+     "slug": "gov-shutdown"
+    },
+    {
+     "id": "514",
+     "label": "Congress",
+     "slug": "congress"
+    }
+   ],
+   "events": [
+    {
+     "id": "55056",
+     "title": "When will the Government shutdown end? ",
+     "slug": "when-will-the-government-shutdown-end-545",
+     "seriesSlug": "shutdown-ends-neg",
+     "startTime": "2025-11-13T06:18:00Z",
+     "endDate": "2025-11-15T00:00:00Z",
+     "negRisk": true,
+     "negRiskAugmented": false,
+     "closed": true,
+     "series": [
+      {
+       "id": "10348",
+       "slug": "shutdown-ends-neg",
+       "recurrence": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "669493",
+   "question": "Trump approval Up or Down this week?",
+   "conditionId": "0xdc840e634d22dffd154de05dd4efe3cab4e8c3f43e9f6b806dd0699747a9bbda",
+   "slug": "trump-approval-up-or-down-this-week-217",
+   "endDate": "2025-11-15T00:00:00Z",
+   "startDate": "2025-11-07T17:07:12.836368Z",
+   "createdAt": "2025-11-07T15:59:40.67143Z",
+   "closedTime": "2025-11-15 14:09:39+00",
+   "acceptingOrdersTimestamp": "2025-11-07T17:06:51Z",
+   "outcomes": "[\"Up\", \"Down\"]",
+   "outcomePrices": "[\"0\", \"1\"]",
+   "clobTokenIds": "[\"87228624059283991128588088827124853020583489538531085543992178292732595962340\", \"15811631093706359380147627015603237136729778971618387915366159793294973513765\"]",
+   "volumeNum": 11632.786758,
+   "enableOrderBook": true,
+   "negRisk": false,
+   "negRiskOther": false,
+   "groupItemTitle": "",
+   "umaResolutionStatus": "resolved",
+   "closed": true,
+   "tags": [
+    {
+     "id": "2",
+     "label": "Politics",
+     "slug": "politics"
+    },
+    {
+     "id": "126",
+     "label": "Trump",
+     "slug": "trump"
+    },
+    {
+     "id": "101697",
+     "label": "Approval",
+     "slug": "approval"
+    }
+   ],
+   "events": [
+    {
+     "id": "75437",
+     "title": "Trump approval Up or Down this week?",
+     "slug": "trump-approval-up-or-down-this-week-217",
+     "seriesSlug": "trump-approval-binary",
+     "endDate": "2025-11-15T00:00:00Z",
+     "negRiskAugmented": false,
+     "closed": true,
+     "series": [
+      {
+       "id": "10111",
+       "slug": "trump-approval-binary",
+       "recurrence": "weekly"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "3899519",
+   "question": "LoL: White Dragons vs Tung Tung Bogi (BO5) - LPLOL Playoffs",
+   "conditionId": "0x9f9b7919ea4db51e5bf2be8b500f697826774ceb91ab0e3b476747ca25dda1e1",
+   "slug": "lol-wd-tung-2026-08-27",
+   "endDate": "2026-09-03T00:00:00Z",
+   "startDate": "2026-08-26T08:00:48Z",
+   "createdAt": "2026-08-26T08:00:28.075929Z",
+   "closedTime": "2026-08-28 02:34:22+00",
+   "acceptingOrdersTimestamp": "2026-08-26T08:00:48Z",
+   "gameStartTime": "2026-09-02 18:00:00+00",
+   "sportsMarketType": "moneyline",
+   "outcomes": "[\"White Dragons\", \"Tung Tung Bogi\"]",
+   "outcomePrices": "[\"1\", \"0\"]",
+   "clobTokenIds": "[\"86612359897758884243085599237816258780961784555718705659406449173838439772970\", \"76057583179378184229846559043701180961167700292944232094612834834030538012784\"]",
+   "volumeNum": 21647.496496000003,
+   "enableOrderBook": true,
+   "negRisk": false,
+   "negRiskOther": false,
+   "groupItemTitle": "Match Winner",
+   "umaResolutionStatus": "resolved",
+   "closed": true,
+   "tags": [
+    {
+     "id": "64",
+     "label": "Esports",
+     "slug": "esports"
+    },
+    {
+     "id": "65",
+     "label": "league of legends",
+     "slug": "league-of-legends"
+    },
+    {
+     "id": "100639",
+     "label": "Games",
+     "slug": "games"
+    },
+    {
+     "id": "1",
+     "label": "Sports",
+     "slug": "sports"
+    }
+   ],
+   "events": [
+    {
+     "id": "914798",
+     "title": "LoL: White Dragons vs Tung Tung Bogi (BO5) - LPLOL Playoffs",
+     "slug": "lol-wd-tung-2026-08-27",
+     "seriesSlug": "league-of-legends",
+     "startTime": "2026-09-02T18:00:00Z",
+     "eventDate": "2026-09-02",
+     "endDate": "2026-09-03T00:00:00Z",
+     "negRisk": false,
+     "negRiskAugmented": false,
+     "closed": true,
+     "gameId": 1598339,
+     "series": [
+      {
+       "id": "10311",
+       "slug": "league-of-legends",
+       "recurrence": "daily"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "527695",
+   "question": "Will Volodymyr Zelenskyy say \"Putin\" during his Business Roundtable appearance?",
+   "conditionId": "0x32fbf2966ee0d1a546269fbe8eea38bb51de85af63ec39a76d7e698238bcb6b4",
+   "slug": "will-volodymyr-zelenskyy-say-putin-during-his-business-roundtable-appearance",
+   "endDate": "2025-03-11T12:00:00Z",
+   "startDate": "2025-03-11T17:03:29.107542Z",
+   "createdAt": "2025-03-11T15:58:09.313139Z",
+   "closedTime": "2025-03-12 06:31:31+00",
+   "acceptingOrdersTimestamp": "2025-03-11T17:02:18Z",
+   "outcomes": "[\"Yes\", \"No\"]",
+   "outcomePrices": "[\"0\", \"1\"]",
+   "clobTokenIds": "[\"15198851391202147638913000636662394395793701557067618501866917745588211363655\", \"9054529926846679521688970427000073335198601620661712260741031821326711703942\"]",
+   "volumeNum": 1273.949218,
+   "enableOrderBook": true,
+   "negRisk": false,
+   "negRiskOther": false,
+   "groupItemTitle": "Putin",
+   "umaResolutionStatus": "resolved",
+   "closed": true,
+   "tags": [
+    {
+     "id": "2",
+     "label": "Politics",
+     "slug": "politics"
+    },
+    {
+     "id": "126",
+     "label": "Trump",
+     "slug": "trump"
+    },
+    {
+     "id": "100343",
+     "label": "Mentions",
+     "slug": "mention-markets"
+    }
+   ],
+   "events": [
+    {
+     "id": "20776",
+     "title": "What will Trump say during Business Roundtable appearance today?",
+     "slug": "what-will-trump-say-during-business-roundtable-appearance-today",
+     "startTime": "2025-03-11T21:00:00Z",
+     "endDate": "2025-03-11T12:00:00Z",
+     "negRisk": false,
+     "negRiskAugmented": false,
+     "closed": true
+    }
+   ]
+  },
+  {
+   "id": "2587797",
+   "question": "Will the ECB announce a 25 bps increase at the September 2026 meeting?",
+   "conditionId": "0x1e43a5c82c8c210ea1b229b8140aa85f82595bb67eab4f61e2379ea1fc00ca8a",
+   "slug": "will-the-ecb-announce-a-25-bps-increase-at-the-september-2026-meeting-20260616222656566",
+   "endDate": "2026-09-10T11:59:00Z",
+   "startDate": "2026-06-17T22:53:45.5398Z",
+   "createdAt": "2026-06-17T22:50:08.526161Z",
+   "closedTime": "2026-09-10 14:17:22+00",
+   "acceptingOrdersTimestamp": "2026-06-17T22:52:46Z",
+   "outcomes": "[\"Yes\", \"No\"]",
+   "outcomePrices": "[\"1\", \"0\"]",
+   "clobTokenIds": "[\"85654491255284232945799571971757400369607728922353401693044083334304106373664\", \"25201675880720641034728784513691420327974101431244128101725582827167668145364\"]",
+   "volumeNum": 193824.06017400004,
+   "enableOrderBook": true,
+   "negRisk": true,
+   "negRiskMarketID": "0x3a9ee50cc1a0be13744c484836c6c681126d67ee732defc9c0fc75b3f0a60600",
+   "negRiskOther": false,
+   "groupItemTitle": "25 bps increase",
+   "umaResolutionStatus": "resolved",
+   "closed": true,
+   "tags": [
+    {
+     "id": "100448",
+     "label": "ECB",
+     "slug": "ecb"
+    },
+    {
+     "id": "100817",
+     "label": "Euro",
+     "slug": "euro"
+    },
+    {
+     "id": "100410",
+     "label": "Europe",
+     "slug": "europe"
+    },
+    {
+     "id": "100328",
+     "label": "Economy",
+     "slug": "economy"
+    },
+    {
+     "id": "102900",
+     "label": "eurozone",
+     "slug": "eurozone"
+    },
+    {
+     "id": "103176",
+     "label": "Global Rates",
+     "slug": "Global-Rates"
+    },
+    {
+     "id": "131",
+     "label": "interest rates",
+     "slug": "interest-rates"
+    },
+    {
+     "id": "132",
+     "label": "monetary policy",
+     "slug": "monetary-policy"
+    },
+    {
+     "id": "102000",
+     "label": "Macro Indicators",
+     "slug": "macro-indicators"
+    },
+    {
+     "id": "101615",
+     "label": "European Central Bank",
+     "slug": "european-central-bank"
+    }
+   ],
+   "events": [
+    {
+     "id": "606384",
+     "title": "ECB Interest Rates: September 2026",
+     "slug": "ecb-interest-rates-september-2026-20260616222636097",
+     "seriesSlug": "ecb-interest-rates",
+     "endDate": "2026-09-10T11:59:00Z",
+     "negRisk": true,
+     "negRiskAugmented": false,
+     "closed": true,
+     "series": [
+      {
+       "id": "10013",
+       "slug": "ecb-interest-rates",
+       "recurrence": "annual"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "3886759",
+   "question": "Nikita Tszyu vs. Ben Mahoney",
+   "conditionId": "0x35a43146490cc8e46e5930012fb1095a1e6321c74be13ad6844315d6fe62594e",
+   "slug": "boxing-tszyu-mahone-2026-08-26",
+   "endDate": "2026-09-10T03:59:00Z",
+   "startDate": "2026-08-25T20:12:09Z",
+   "createdAt": "2026-08-25T20:11:59.497276Z",
+   "closedTime": "2026-10-06 00:34:55+00",
+   "acceptingOrdersTimestamp": "2026-08-25T20:12:09Z",
+   "gameStartTime": "2026-08-26 12:00:00+00",
+   "sportsMarketType": "moneyline",
+   "outcomes": "[\"Nikita Tszyu\", \"Ben Mahoney\"]",
+   "outcomePrices": "[\"0.5\", \"0.5\"]",
+   "clobTokenIds": "[\"66889968575040534399457286102693720375101677422165603173582927113182604033956\", \"95440089790966506501205006345988050834201277387657737195333237947535021152244\"]",
+   "volumeNum": 10017.300090000002,
+   "enableOrderBook": true,
+   "negRisk": false,
+   "negRiskOther": false,
+   "umaResolutionStatus": "resolved",
+   "closed": true,
+   "tags": [
+    {
+     "id": "1",
+     "label": "Sports",
+     "slug": "sports"
+    },
+    {
+     "id": "683",
+     "label": "Boxing",
+     "slug": "boxing"
+    },
+    {
+     "id": "100639",
+     "label": "Games",
+     "slug": "games"
+    }
+   ],
+   "events": [
+    {
+     "id": "912160",
+     "title": "Nikita Tszyu vs. Ben Mahoney",
+     "slug": "boxing-tszyu-mahone-2026-08-26",
+     "seriesSlug": "boxing",
+     "startTime": "2026-08-26T12:00:00Z",
+     "eventDate": "2026-08-26",
+     "endDate": "2026-09-10T03:59:00Z",
+     "negRisk": false,
+     "negRiskAugmented": false,
+     "closed": true,
+     "gameId": 1080609,
+     "series": [
+      {
+       "id": "12578",
+       "slug": "boxing",
+       "recurrence": "daily"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "3874448",
+   "question": "Will Carlos Alcaraz advance to the Semifinals in Men's Singles at the 2026 US Open?",
+   "conditionId": "0x0d62271aa9d9c4e2aa5aa6e4d7f044c7b0821bd93bb999dc06c51f150d1cf4e3",
+   "slug": "will-carlos-alcaraz-advance-to-the-semifinals-in-mens-singles-at-the-2026-us-open",
+   "endDate": "2026-09-10T23:59:00Z",
+   "startDate": "2026-08-25T15:26:51Z",
+   "createdAt": "2026-08-25T15:25:59.639788Z",
+   "closedTime": "2026-09-09 09:35:31+00",
+   "acceptingOrdersTimestamp": "2026-08-25T15:26:51Z",
+   "outcomes": "[\"Yes\", \"No\"]",
+   "outcomePrices": "[\"0\", \"1\"]",
+   "clobTokenIds": "[\"76383490118891830779272514991494912733227794607161226360342981474364139663192\", \"15261539396076982219180738026727463131226398070195730423455944674636884014013\"]",
+   "volumeNum": 5159.8074480000005,
+   "enableOrderBook": true,
+   "negRisk": false,
+   "negRiskOther": false,
+   "groupItemTitle": "Carlos Alcaraz",
+   "umaResolutionStatus": "resolved",
+   "closed": true,
+   "tags": [
+    {
+     "id": "101232",
+     "label": "ATP",
+     "slug": "atp"
+    },
+    {
+     "id": "1",
+     "label": "Sports",
+     "slug": "sports"
+    },
+    {
+     "id": "864",
+     "label": "Tennis",
+     "slug": "tennis"
+    },
+    {
+     "id": "100408",
+     "label": "US Open",
+     "slug": "us-open"
+    }
+   ],
+   "events": [
+    {
+     "id": "910171",
+     "title": "US Open 2026: To Reach Semifinals (Men's Singles)",
+     "slug": "us-open-2026-to-reach-semifinals-mens-singles-20260824175605000",
+     "endDate": "2026-09-10T23:59:00Z",
+     "negRisk": false,
+     "negRiskAugmented": false,
+     "closed": true
+    }
+   ]
+  },
+  {
+   "id": "12016",
+   "question": "Will Andrew Yang win the Democratic primary for Mayor of New York City in 2021?",
+   "conditionId": "0xf5b392f05bef47906dc0a753def7625069dfd1c2ece454fecf695c048fc118d1",
+   "slug": "will-andrew-yang-win-the-democratic-primary-for-mayor-of-new-york-city-in-2021",
+   "endDate": "2021-06-22T00:00:00Z",
+   "createdAt": "2020-12-21T21:20:51.963Z",
+   "closedTime": "2021-06-23 23:42:06+00",
+   "outcomes": "[\"Yes\", \"No\"]",
+   "outcomePrices": "[\"0.00000009792476954804243452949098140021029\", \"0.9999999020752304519575654705090186\"]",
+   "clobTokenIds": "[\"85322207020076796954091557352188846126827192073700703997119449751046710328127\", \"10565846370253343572935674000795445286008386631659027084143836080103688720561\"]",
+   "volumeNum": 1258244.22,
+   "negRiskOther": false,
+   "category": "US-current-affairs",
+   "marketType": "normal",
+   "closed": true,
+   "tags": [
+    {
+     "id": "100215",
+     "label": "All",
+     "slug": "all"
+    }
+   ],
+   "events": [
+    {
+     "id": "3179",
+     "title": "Will Andrew Yang win the Democratic primary for Mayor of New York City in 2021?",
+     "slug": "will-andrew-yang-win-the-democratic-primary-for-mayor-of-new-york-city-in-2021",
+     "endDate": "2021-06-22T00:00:00Z",
+     "negRiskAugmented": false,
+     "closed": true
+    }
+   ]
+  },
+  {
+   "id": "161491",
+   "question": "Will Floyd Mayweather beat Logan Paul in their rescheduled exhibition boxing match?",
+   "conditionId": "0x758adcc39323f25c11f54fcbacc207d3f598a790a24c78dee0936e2c95a546e0",
+   "slug": "will-floyd-mayweather-beat-logan-paul-in-their-rescheduled-exhibition-boxing-match",
+   "endDate": "2021-06-06T00:00:00Z",
+   "createdAt": "2021-04-28T21:40:13.091Z",
+   "closedTime": "2021-06-07 04:14:58+00",
+   "outcomes": "[\"Yes\", \"No\"]",
+   "outcomePrices": "[\"0.9004795041816991033504154645123096\", \"0.09952049581830089664958453548769035\"]",
+   "clobTokenIds": "[\"53083778653480046682096669240824024896493216836311927420773527700365820695998\", \"100435614898451324103889137587469592190794459108886143202264645930670392346973\"]",
+   "volumeNum": 352289.83,
+   "negRiskOther": false,
+   "category": "Sports",
+   "marketType": "normal",
+   "closed": true,
+   "tags": [
+    {
+     "id": "100215",
+     "label": "All",
+     "slug": "all"
+    }
+   ],
+   "events": [
+    {
+     "id": "4360",
+     "title": "Will Floyd Mayweather beat Logan Paul in their rescheduled exhibition boxing match?",
+     "slug": "will-floyd-mayweather-beat-logan-paul-in-their-rescheduled-exhibition-boxing-match",
+     "endDate": "2021-06-06T00:00:00Z",
+     "negRiskAugmented": false,
+     "closed": true
+    }
+   ]
+  },
+  {
+   "id": "126965",
+   "question": "Who will win the 2021 Peruvian Presidential Election?",
+   "conditionId": "0x3aa9ffe57f9053a9a52acb4aacffa55d402d5ac21b073ec734850e38e100a001",
+   "slug": "who-will-win-the-2021-peruvian-presidential-election",
+   "endDate": "2021-06-06T00:00:00Z",
+   "createdAt": "2021-04-14T15:15:03.462Z",
+   "closedTime": "2021-07-20 20:27:10+00",
+   "outcomes": "[\"Keiko Fujimori\", \"Pedro Castillo\"]",
+   "outcomePrices": "[\"0.0000001688941397652989114460787409267252\", \"0.9999998311058602347010885539212591\"]",
+   "clobTokenIds": "[\"95958809594966338414920288529219875257404877372710766739908357189720394003313\", \"45585865577971721176638239760993465291991627739050034822113762553105627073166\"]",
+   "volumeNum": 141910.05,
+   "negRiskOther": false,
+   "category": "Global Politics",
+   "marketType": "normal",
+   "closed": true,
+   "tags": [
+    {
+     "id": "100215",
+     "label": "All",
+     "slug": "all"
+    }
+   ],
+   "events": [
+    {
+     "id": "3189",
+     "title": "Who will win the 2021 Peruvian Presidential Election?",
+     "slug": "who-will-win-the-2021-peruvian-presidential-election",
+     "endDate": "2021-06-06T00:00:00Z",
+     "negRiskAugmented": false,
+     "closed": true
+    }
+   ]
+  },
+  {
+   "id": "4551368",
+   "question": "Bitcoin Up or Down - September 15, 8:00AM-8:05AM ET",
+   "conditionId": "0x5804c18da090ec5b4324d07a6719b0936da7f9af0d9d939045f5ca9f06e4e11f",
+   "slug": "btc-updown-5m-1789473600",
+   "endDate": "2026-09-15T12:05:00Z",
+   "startDate": "2026-09-14T12:08:43.502476Z",
+   "createdAt": "2026-09-14T12:07:07.659877Z",
+   "closedTime": "2026-09-15 12:05:54+00",
+   "acceptingOrdersTimestamp": "2026-09-14T12:07:55Z",
+   "outcomes": "[\"Up\", \"Down\"]",
+   "outcomePrices": "[\"0\", \"1\"]",
+   "clobTokenIds": "[\"90299714041878941481507391674513862028607579458246447018010130500232145025485\", \"92311832429988847102200833098291142343147226668369221727037988497687769198327\"]",
+   "volumeNum": 62087.10645100003,
+   "enableOrderBook": true,
+   "negRisk": false,
+   "negRiskOther": false,
+   "umaResolutionStatus": "resolved",
+   "closed": true,
+   "tags": [
+    {
+     "id": "102127",
+     "label": "Up or Down",
+     "slug": "up-or-down"
+    },
+    {
+     "id": "1312",
+     "label": "Crypto Prices",
+     "slug": "crypto-prices"
+    },
+    {
+     "id": "102169",
+     "label": "Hide From New",
+     "slug": "hide-from-new"
+    },
+    {
+     "id": "101757",
+     "label": "Recurring",
+     "slug": "recurring"
+    },
+    {
+     "id": "21",
+     "label": "Crypto",
+     "slug": "crypto"
+    },
+    {
+     "id": "235",
+     "label": "Bitcoin",
+     "slug": "bitcoin"
+    },
+    {
+     "id": "102892",
+     "label": "5M",
+     "slug": "5M"
+    }
+   ],
+   "events": [
+    {
+     "id": "1022498",
+     "title": "Bitcoin Up or Down - September 15, 8:00AM-8:05AM ET",
+     "slug": "btc-updown-5m-1789473600",
+     "seriesSlug": "btc-up-or-down-5m",
+     "startTime": "2026-09-15T12:00:00Z",
+     "endDate": "2026-09-15T12:05:00Z",
+     "negRisk": false,
+     "negRiskAugmented": false,
+     "closed": true,
+     "series": [
+      {
+       "id": "10684",
+       "slug": "btc-up-or-down-5m",
+       "recurrence": "5m"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "4551374",
+   "question": "Bitcoin Up or Down - September 15, 8:00AM-8:15AM ET",
+   "conditionId": "0x9e139ec4a36aa35bf38d508942c438548378dca5e7296f04f8a1065e1d5ce38b",
+   "slug": "btc-updown-15m-1789473600",
+   "endDate": "2026-09-15T12:15:00Z",
+   "startDate": "2026-09-14T12:08:32.236033Z",
+   "createdAt": "2026-09-14T12:07:09.378437Z",
+   "closedTime": "2026-09-15 12:16:27+00",
+   "acceptingOrdersTimestamp": "2026-09-14T12:07:43Z",
+   "outcomes": "[\"Up\", \"Down\"]",
+   "outcomePrices": "[\"0\", \"1\"]",
+   "clobTokenIds": "[\"96559218403587356204119142654191046345001665460855642587752132161114956380772\", \"84492785729855707216853667912710396689931470079779060210514375058139365512278\"]",
+   "volumeNum": 49550.38855899997,
+   "enableOrderBook": true,
+   "negRisk": false,
+   "negRiskOther": false,
+   "umaResolutionStatus": "resolved",
+   "closed": true,
+   "tags": [
+    {
+     "id": "102127",
+     "label": "Up or Down",
+     "slug": "up-or-down"
+    },
+    {
+     "id": "1312",
+     "label": "Crypto Prices",
+     "slug": "crypto-prices"
+    },
+    {
+     "id": "102169",
+     "label": "Hide From New",
+     "slug": "hide-from-new"
+    },
+    {
+     "id": "101757",
+     "label": "Recurring",
+     "slug": "recurring"
+    },
+    {
+     "id": "21",
+     "label": "Crypto",
+     "slug": "crypto"
+    },
+    {
+     "id": "235",
+     "label": "Bitcoin",
+     "slug": "bitcoin"
+    },
+    {
+     "id": "102467",
+     "label": "15M",
+     "slug": "15M"
+    }
+   ],
+   "events": [
+    {
+     "id": "1022503",
+     "title": "Bitcoin Up or Down - September 15, 8:00AM-8:15AM ET",
+     "slug": "btc-updown-15m-1789473600",
+     "seriesSlug": "btc-up-or-down-15m",
+     "startTime": "2026-09-15T12:00:00Z",
+     "endDate": "2026-09-15T12:15:00Z",
+     "negRisk": false,
+     "negRiskAugmented": false,
+     "closed": true,
+     "series": [
+      {
+       "id": "10192",
+       "slug": "btc-up-or-down-15m",
+       "recurrence": "15m"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "528107",
+   "question": "Bitcoin Up or Down on March 15? (noon)",
+   "conditionId": "0x72997442e76dfc8ce295a8ff2de65e7fdc219f6ab72b6103147a35451ca55352",
+   "slug": "bitcoin-up-or-down-on-march-15-noon",
+   "endDate": "2025-03-15T12:00:00Z",
+   "startDate": "2025-03-14T15:08:24.271151Z",
+   "createdAt": "2025-03-14T14:32:54.614948Z",
+   "closedTime": "2025-03-15 18:13:59+00",
+   "acceptingOrdersTimestamp": "2025-03-14T15:07:13Z",
+   "outcomes": "[\"Up\", \"Down\"]",
+   "outcomePrices": "[\"0\", \"1\"]",
+   "clobTokenIds": "[\"53257202481198431535330212825154664858875628690778112325318192422369377282481\", \"114845209682962564443946724136306890332032064754087889986334829979312947449676\"]",
+   "volumeNum": 105520.475288,
+   "enableOrderBook": true,
+   "negRisk": false,
+   "negRiskOther": false,
+   "groupItemTitle": "",
+   "umaResolutionStatus": "resolved",
+   "closed": true,
+   "tags": [
+    {
+     "id": "21",
+     "label": "Crypto",
+     "slug": "crypto"
+    },
+    {
+     "id": "235",
+     "label": "Bitcoin",
+     "slug": "bitcoin"
+    },
+    {
+     "id": "1312",
+     "label": "Crypto Prices",
+     "slug": "crypto-prices"
+    },
+    {
+     "id": "101757",
+     "label": "Recurring",
+     "slug": "recurring"
+    }
+   ],
+   "events": [
+    {
+     "id": "20926",
+     "title": "Bitcoin Up or Down on March 15? (noon)",
+     "slug": "bitcoin-up-or-down-on-march-15-noon",
+     "seriesSlug": "btc-dailies",
+     "endDate": "2025-03-15T12:00:00Z",
+     "negRiskAugmented": false,
+     "closed": true,
+     "series": [
+      {
+       "id": "41",
+       "slug": "btc-up-or-down-daily",
+       "recurrence": "daily"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "949819",
+   "question": "Will Other start Week 1 for the Chiefs in 2026?",
+   "conditionId": "0x05a6747890848e144d025e9b388dfcbbcd4aa3add01d780b0ae9b5a019c3a913",
+   "slug": "will-other-start-week-1-for-the-chiefs-in-2026",
+   "endDate": "2026-09-10T00:00:00Z",
+   "startDate": "2025-12-16T19:34:40.960789Z",
+   "createdAt": "2025-12-16T18:20:41.777146Z",
+   "acceptingOrdersTimestamp": "2025-12-16T19:34:17Z",
+   "outcomes": "[\"Yes\", \"No\"]",
+   "clobTokenIds": "[\"16463349573801586988131089605010774684727019163756066584822744899147436842074\", \"39021628981199294538903064848315282819424546360151313292101880243908943925840\"]",
+   "volumeNum": 0,
+   "enableOrderBook": true,
+   "negRisk": true,
+   "negRiskMarketID": "0x409f326c8d163b1fb59c82ea510efb6612d509ebd1bac72febbc79261ce76800",
+   "negRiskOther": true,
+   "groupItemTitle": "Other",
+   "umaResolutionStatus": "proposed",
+   "closed": false,
+   "tags": [
+    {
+     "id": "450",
+     "label": "NFL (All)",
+     "slug": "nfl"
+    },
+    {
+     "id": "194",
+     "label": "chiefs",
+     "slug": "chiefs"
+    },
+    {
+     "id": "1",
+     "label": "Sports",
+     "slug": "sports"
+    },
+    {
+     "id": "1272",
+     "label": "patrick mahomes",
+     "slug": "patrick-mahomes"
+    }
+   ],
+   "events": [
+    {
+     "id": "106917",
+     "title": "Chiefs Week 1 starting QB in 2026?",
+     "slug": "chiefs-week-1-starting-qb-in-2026",
+     "endDate": "2026-09-10T00:00:00Z",
+     "negRisk": true,
+     "negRiskAugmented": true,
+     "closed": true
+    }
+   ]
+  },
+  {
+   "id": "3779840",
+   "question": "Will the price of Bitcoin be above $66,000 on August 29?",
+   "conditionId": "0x843255aefd7d1ab0e04c3eea2fcfafa195e8fe51006d5a1777e6057f0947559f",
+   "slug": "bitcoin-above-66k-on-august-29-2026",
+   "endDate": "2026-08-29T16:00:00Z",
+   "startDate": "2026-08-22T16:00:24Z",
+   "createdAt": "2026-08-22T16:00:04.761458Z",
+   "closedTime": "2026-08-29 16:22:36+00",
+   "acceptingOrdersTimestamp": "2026-08-22T16:00:24Z",
+   "outcomes": "[\"Yes\", \"No\"]",
+   "outcomePrices": "[\"1\", \"0\"]",
+   "clobTokenIds": "[\"84613011629557124273766465106713710033157191919517571782866644215323607550524\", \"68267917690030870933492073327892085760122444196482368677563196507050761801936\"]",
+   "volumeNum": 9842.830338,
+   "enableOrderBook": true,
+   "negRisk": false,
+   "negRiskOther": false,
+   "groupItemTitle": "66,000",
+   "umaResolutionStatus": "resolved",
+   "closed": true,
+   "tags": [
+    {
+     "id": "235",
+     "label": "Bitcoin",
+     "slug": "bitcoin"
+    },
+    {
+     "id": "102264",
+     "label": "Weekly",
+     "slug": "weekly"
+    },
+    {
+     "id": "102516",
+     "label": "Multi Strikes",
+     "slug": "multi-strikes"
+    },
+    {
+     "id": "21",
+     "label": "Crypto",
+     "slug": "crypto"
+    },
+    {
+     "id": "1312",
+     "label": "Crypto Prices",
+     "slug": "crypto-prices"
+    },
+    {
+     "id": "101757",
+     "label": "Recurring",
+     "slug": "recurring"
+    },
+    {
+     "id": "102169",
+     "label": "Hide From New",
+     "slug": "hide-from-new"
+    }
+   ],
+   "events": [
+    {
+     "id": "890359",
+     "title": "Bitcoin above ___ on August 29?",
+     "slug": "bitcoin-above-on-august-29-2026",
+     "seriesSlug": "btc-multi-strikes-weekly",
+     "endDate": "2026-08-29T16:00:00Z",
+     "negRisk": false,
+     "negRiskAugmented": false,
+     "closed": true,
+     "series": [
+      {
+       "id": "45",
+       "slug": "btc-multi-strikes-weekly",
+       "recurrence": "weekly"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "3970517",
+   "question": "Bitcoin above 79,800 on August 29, 7AM ET?",
+   "conditionId": "0xa7de943a7fc8973774ba5bccdcbd65692cb7b0cec545374d4fcd9c415947043c",
+   "slug": "bitcoin-above-79800-on-august-29-2026-7am-et",
+   "endDate": "2026-08-29T11:00:00Z",
+   "startDate": "2026-08-29T09:40:16Z",
+   "createdAt": "2026-08-29T09:40:00.673842Z",
+   "closedTime": "2026-08-29 11:11:49+00",
+   "acceptingOrdersTimestamp": "2026-08-29T09:40:16Z",
+   "gameStartTime": "2026-08-29 11:00:00+00",
+   "outcomes": "[\"Yes\", \"No\"]",
+   "outcomePrices": "[\"0\", \"1\"]",
+   "clobTokenIds": "[\"76667438087485483196809257759555292484975483014501373446381778393155412498811\", \"86146739461999549215303771581110787291079877330642796201518185654149161351689\"]",
+   "volumeNum": 19.994,
+   "enableOrderBook": true,
+   "negRisk": false,
+   "negRiskOther": false,
+   "groupItemTitle": "79,800",
+   "umaResolutionStatus": "resolved",
+   "closed": true,
+   "tags": [
+    {
+     "id": "235",
+     "label": "Bitcoin",
+     "slug": "bitcoin"
+    },
+    {
+     "id": "102175",
+     "label": "1H",
+     "slug": "1H"
+    },
+    {
+     "id": "102516",
+     "label": "Multi Strikes",
+     "slug": "multi-strikes"
+    },
+    {
+     "id": "21",
+     "label": "Crypto",
+     "slug": "crypto"
+    },
+    {
+     "id": "1312",
+     "label": "Crypto Prices",
+     "slug": "crypto-prices"
+    },
+    {
+     "id": "101757",
+     "label": "Recurring",
+     "slug": "recurring"
+    },
+    {
+     "id": "102169",
+     "label": "Hide From New",
+     "slug": "hide-from-new"
+    }
+   ],
+   "events": [
+    {
+     "id": "930066",
+     "title": "Bitcoin above ___ on August 29, 7AM ET?",
+     "slug": "bitcoin-above-on-august-29-2026-7am-et",
+     "seriesSlug": "bitcoin-multi-strikes-hourly",
+     "endDate": "2026-08-29T11:00:00Z",
+     "negRisk": false,
+     "negRiskAugmented": false,
+     "closed": true,
+     "series": [
+      {
+       "id": "11372",
+       "slug": "bitcoin-multi-strikes-hourly",
+       "recurrence": "hourly"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

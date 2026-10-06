@@ -1,0 +1,24 @@
+{
+ "226378": [
+  {
+   "total": 8359.278306,
+   "markets": [
+    {
+     "market": "0x9eea6255ed05b3e87ecfc99ba34b8349ed18cab9264ca84151e438aaf6880f35",
+     "value": 8359.278306
+    }
+   ]
+  }
+ ],
+ "226383": [
+  {
+   "total": 5821.577376,
+   "markets": [
+    {
+     "market": "0xb819eecb4a37e3e629a590f3f90f9bd8483d8ced0f23985cff1ae8ba799825c8",
+     "value": 5821.577376
+    }
+   ]
+  }
+ ]
+}

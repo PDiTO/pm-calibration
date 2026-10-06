@@ -1,0 +1,36 @@
+# The configuration behind the results in the README.
+name = "main"
+
+[study]
+# Scheduled resolution date window (UTC, inclusive).
+start = "2026-01-01"
+end = "2026-09-30"
+data_dir = "data"
+
+[frame]
+# No lifetime-volume floor beyond "traded at least once". Lifetime volume includes
+# trading after the snapshot, and upsets attract volume, so a floor on it selects
+# on the outcome. Thin and stale prices are handled at the snapshot instead, with
+# information available at that time (see pmcal.panel).
+min_volume_usd = 0.0
+exclude_short_crypto = true
+
+[sample]
+seed = 20261006
+max_events_per_series_month = 3
+max_contracts_per_event = 12
+
+# Kalshi lists thousands of small series (one per team, player, city or speaker), and
+# its public API allows about 4 requests a second, so it gets tighter caps.
+[sample.venue.kalshi]
+max_events_per_series_month = 1
+max_contracts_per_event = 6
+
+[snapshots]
+horizons = ["30d", "14d", "7d", "3d", "1d", "6h", "1h"]
+max_spread = 0.10
+
+[analysis]
+# Bootstrap clusters: contracts in the same category resolving on the same day share
+# common shocks (a crypto selloff, a sports slate), so they are resampled together.
+cluster_by = ["category_day"]

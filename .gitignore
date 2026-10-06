@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Environments
+.venv/
+venv/
+
+# Tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.coverage
+htmlcov/
+
+# Raw API downloads, the sampling frame and the built panel (several GB).
+# results/ is committed on purpose.
+data/
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/

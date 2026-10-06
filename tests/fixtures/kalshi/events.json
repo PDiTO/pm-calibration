@@ -1,0 +1,213 @@
+{
+ "events": [
+  {
+   "category": "Climate and Weather",
+   "collateral_return_type": "",
+   "event_ticker": "HIGHNY-21AUG06",
+   "exchange_index": 0,
+   "last_updated_ts": "0001-01-01T00:00:00Z",
+   "mutually_exclusive": false,
+   "series_ticker": "KXHIGHNY",
+   "strike_period": "",
+   "sub_title": "On Aug 6, 2021",
+   "title": "Highest temperature in NYC on Aug 6, 2021?"
+  },
+  {
+   "category": "Climate and Weather",
+   "collateral_return_type": "MECNET",
+   "event_ticker": "HIGHNY-24AUG15",
+   "exchange_index": 0,
+   "last_updated_ts": "0001-01-01T00:00:00Z",
+   "mutually_exclusive": true,
+   "series_ticker": "KXHIGHNY",
+   "strike_date": "2024-08-16T03:59:00Z",
+   "strike_period": "",
+   "sub_title": "On Aug 15, 2024",
+   "title": "Highest temperature in NYC on Aug 15, 2024?"
+  },
+  {
+   "category": "Economics",
+   "collateral_return_type": "DIRECNET",
+   "event_ticker": "KXFED-26SEP",
+   "exchange_index": 0,
+   "last_updated_ts": "0001-01-01T00:00:00Z",
+   "mutually_exclusive": false,
+   "series_ticker": "KXFED",
+   "strike_date": "2026-09-16T18:00:00Z",
+   "strike_period": "",
+   "sub_title": "On Sep 16, 2026",
+   "title": "Fed funds rate after Sep 2026 meeting?"
+  },
+  {
+   "category": "Economics",
+   "collateral_return_type": "",
+   "event_ticker": "KXIPOOPENAI",
+   "exchange_index": 0,
+   "last_updated_ts": "0001-01-01T00:00:00Z",
+   "mutually_exclusive": false,
+   "series_ticker": "KXIPOOPENAI",
+   "strike_period": "",
+   "sub_title": "OpenAI",
+   "title": "When will OpenAI officially announce an IPO?"
+  },
+  {
+   "category": "Sports",
+   "collateral_return_type": "MECNET",
+   "event_ticker": "KXMLBGAME-26AUG061610DETSEA",
+   "exchange_index": 0,
+   "last_updated_ts": "0001-01-01T00:00:00Z",
+   "mutually_exclusive": true,
+   "series_ticker": "KXMLBGAME",
+   "strike_period": "",
+   "sub_title": "DET vs SEA (Aug 6)",
+   "title": "Detroit vs Seattle"
+  },
+  {
+   "category": "Sports",
+   "collateral_return_type": "MECNET",
+   "event_ticker": "KXMLBGAME-26JUN061935BOSNYY",
+   "exchange_index": 0,
+   "last_updated_ts": "0001-01-01T00:00:00Z",
+   "mutually_exclusive": true,
+   "series_ticker": "KXMLBGAME",
+   "strike_period": "",
+   "sub_title": "BOS vs NYY (Jun 6)",
+   "title": "Boston vs New York Y"
+  },
+  {
+   "category": "Sports",
+   "collateral_return_type": "MECNET",
+   "event_ticker": "KXMLBGAME-26SEP142138SEALAA",
+   "exchange_index": 3,
+   "fee_multiplier_override": 1,
+   "fee_type_override": "quadratic_with_maker_fees",
+   "last_updated_ts": "0001-01-01T00:00:00Z",
+   "mutually_exclusive": true,
+   "series_ticker": "KXMLBGAME",
+   "strike_period": "",
+   "sub_title": "SEA vs LAA (Sep 14)",
+   "title": "Seattle vs Los Angeles A"
+  },
+  {
+   "category": "Sports",
+   "collateral_return_type": "MECNET",
+   "event_ticker": "KXNBAGAME-26MAY04PHINYK",
+   "exchange_index": 0,
+   "last_updated_ts": "0001-01-01T00:00:00Z",
+   "mutually_exclusive": true,
+   "series_ticker": "KXNBAGAME",
+   "strike_period": "",
+   "sub_title": "PHI at NYK (May 4)",
+   "title": "Game 1: Philadelphia at New York"
+  },
+  {
+   "category": "Politics",
+   "collateral_return_type": "",
+   "event_ticker": "KXTRUMPADMINLEAVE-26DEC31",
+   "exchange_index": 0,
+   "last_updated_ts": "0001-01-01T00:00:00Z",
+   "mutually_exclusive": false,
+   "series_ticker": "KXTRUMPADMINLEAVE",
+   "strike_period": "",
+   "sub_title": "before 2027",
+   "title": "Who will leave their role in the Trump administration in 2026?"
+  }
+ ],
+ "milestones": [
+  {
+   "category": "Sports",
+   "end_date": "2026-05-05T16:55:55Z",
+   "id": "180c1cd9-e3fb-426a-9053-bef5165a9a0a",
+   "last_updated_ts": "2026-05-06T17:14:54.66175Z",
+   "notification_message": "The game is about to begin!",
+   "primary_event_tickers": [
+    "KXNBAGAME-26MAY04PHINYK",
+    "KXNBASPREAD-26MAY04PHINYK",
+    "KXNBATOTAL-26MAY04PHINYK",
+    "KXNBATEAMTOTAL-26MAY04PHINYK",
+    "KXNBAOVERTIME-26MAY04PHINYK",
+    "KXNBA1HWINNER-26MAY04PHINYK",
+    "KXNBA2HWINNER-26MAY04PHINYK",
+    "KXNBA1HSPREAD-26MAY04PHINYK",
+    "KXNBA1HTOTAL-26MAY04PHINYK",
+    "KXNBA2HSPREAD-26MAY04PHINYK",
+    "KXNBA2HTOTAL-26MAY04PHINYK"
+   ],
+   "related_event_tickers": [
+    "KXNBAGAME-26MAY04PHINYK",
+    "KXNBASPREAD-26MAY04PHINYK",
+    "KXNBATOTAL-26MAY04PHINYK",
+    "KXNBATEAMTOTAL-26MAY04PHINYK",
+    "KXNBAOVERTIME-26MAY04PHINYK",
+    "KXNBAPTS-26MAY04PHINYK",
+    "KXNBAREB-26MAY04PHINYK",
+    "KXNBAAST-26MAY04PHINYK",
+    "KXNBA3PT-26MAY04PHINYK",
+    "KXNBA2D-26MAY04PHINYK",
+    "KXNBA3D-26MAY04PHINYK",
+    "KXNBA1HWINNER-26MAY04PHINYK",
+    "KXNBA2HWINNER-26MAY04PHINYK",
+    "KXNBAMENTION-26MAY04PHINYK",
+    "KXNBASTL-26MAY04PHINYK",
+    "KXNBABLK-26MAY04PHINYK",
+    "KXNBA1HSPREAD-26MAY04PHINYK",
+    "KXNBA1HTOTAL-26MAY04PHINYK",
+    "KXNBAPTSLEADER-26MAY04PHINYK",
+    "KXNBA2HSPREAD-26MAY04PHINYK",
+    "KXNBA2HTOTAL-26MAY04PHINYK"
+   ],
+   "source_id": "3252a63c-e8d2-4aa1-8246-694cbc144538",
+   "start_date": "2026-05-05T00:00:00Z",
+   "title": "Philadelphia at New York",
+   "type": "basketball_game",
+   "details": {
+    "league": "NBA",
+    "status": "inprogress",
+    "main_game_event_ticker": "KXNBAGAME-26MAY04PHINYK"
+   }
+  },
+  {
+   "category": "Sports",
+   "end_date": "2026-08-06T23:10:26Z",
+   "id": "869d9dfa-c6aa-44f2-ab1e-52a23f0feb6c",
+   "last_updated_ts": "2026-08-07T23:33:29.393282Z",
+   "notification_message": "The game is about to begin.",
+   "primary_event_tickers": [
+    "KXMLBGAME-26AUG061610DETSEA",
+    "KXMLBEXTRAS-26AUG061610DETSEA",
+    "KXMLBSPREAD-26AUG061610DETSEA",
+    "KXMLBTOTAL-26AUG061610DETSEA"
+   ],
+   "related_event_tickers": [
+    "KXMLBGAME-26AUG061610DETSEA",
+    "KXMLBEXTRAS-26AUG061610DETSEA",
+    "KXMLBRFI-26AUG061610DETSEA",
+    "KXMLBSPREAD-26AUG061610DETSEA",
+    "KXMLBTOTAL-26AUG061610DETSEA",
+    "KXMLBF5-26AUG061610DETSEA",
+    "KXMLBF5SPREAD-26AUG061610DETSEA",
+    "KXMLBF5TOTAL-26AUG061610DETSEA",
+    "KXMLBF3-26AUG061610DETSEA",
+    "KXMLBF7-26AUG061610DETSEA",
+    "KXMLBTEAMTOTAL-26AUG061610DETSEA",
+    "KXMLBHR-26AUG061610DETSEA",
+    "KXMLBKS-26AUG061610DETSEA",
+    "KXMLBHIT-26AUG061610DETSEA",
+    "KXMLBTB-26AUG061610DETSEA",
+    "KXMLBHRR-26AUG061610DETSEA",
+    "KXMLBRBI-26AUG061610DETSEA",
+    "KXMLBOUTS-26AUG061610DETSEA",
+    "KXMLBSB-26AUG061610DETSEA"
+   ],
+   "source_id": "cc407aa3-6dc3-482c-832f-d50345b87cf9",
+   "start_date": "2026-08-06T20:10:00Z",
+   "title": "Detroit vs Seattle",
+   "type": "baseball_game",
+   "details": {
+    "league": "MLB",
+    "status": "closed",
+    "main_game_event_ticker": "KXMLBGAME-26AUG061610DETSEA"
+   }
+  }
+ ]
+}

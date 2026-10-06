@@ -1,0 +1,139 @@
+{
+ "series": [
+  {
+   "ticker": "KXHIGHNY",
+   "title": "Highest temperature in NYC",
+   "category": "Climate and Weather",
+   "frequency": "daily",
+   "volume_fp": "147272612.00",
+   "tags": [
+    "Daily temperature"
+   ]
+  },
+  {
+   "ticker": "KXMLBGAME",
+   "title": "Professional Baseball Game",
+   "category": "Sports",
+   "frequency": "custom",
+   "volume_fp": "10408630300.00",
+   "tags": [
+    "Baseball"
+   ]
+  },
+  {
+   "ticker": "KXNBAGAME",
+   "title": "NBA Game",
+   "category": "Sports",
+   "frequency": "custom",
+   "volume_fp": "11688158053.00",
+   "tags": [
+    "Basketball"
+   ]
+  },
+  {
+   "ticker": "KXFED",
+   "title": "Fed funds rate",
+   "category": "Economics",
+   "frequency": "custom",
+   "volume_fp": "59881228.00",
+   "tags": [
+    "Fed"
+   ]
+  },
+  {
+   "ticker": "KXBTC15M",
+   "title": "Bitcoin price up down",
+   "category": "Crypto",
+   "frequency": "fifteen_min",
+   "volume_fp": "22760379433.00",
+   "tags": [
+    "BTC",
+    "15 min"
+   ]
+  },
+  {
+   "ticker": "KXBTCD",
+   "title": "Bitcoin price Above/below",
+   "category": "Crypto",
+   "frequency": "hourly",
+   "volume_fp": "8206317889.00",
+   "tags": [
+    "Hourly",
+    "BTC"
+   ]
+  },
+  {
+   "ticker": "KXTEMPNYCH",
+   "title": "Hourly Directional NYC Temperature",
+   "category": "Climate and Weather",
+   "frequency": "hourly",
+   "volume_fp": "11646709.00",
+   "tags": [
+    "Hourly temperature"
+   ]
+  },
+  {
+   "ticker": "KXMVENFLSINGLEGAME",
+   "title": "MVE NFL Single Game",
+   "category": "Exotics",
+   "frequency": "one_off",
+   "volume_fp": "0.00",
+   "tags": [
+    "Football"
+   ]
+  },
+  {
+   "ticker": "KXTXSTATEWIDEDEMS",
+   "title": "How many Texas statewide races will Democrats win in 2026?",
+   "category": "Elections",
+   "frequency": "one_off",
+   "volume_fp": "906.00",
+   "tags": [
+    "US Elections",
+    "Other US Elections"
+   ]
+  },
+  {
+   "ticker": "KXTRUMPADMINLEAVE",
+   "title": "Who will leave the Trump administration",
+   "category": "Politics",
+   "frequency": "annual",
+   "volume_fp": "7921472.00",
+   "tags": [
+    "Trump"
+   ]
+  },
+  {
+   "ticker": "HIGHNY",
+   "title": "Highest temperature in NYC",
+   "category": "Climate and Weather",
+   "frequency": "daily",
+   "volume_fp": "0.00",
+   "tags": [
+    "Daily temperature"
+   ]
+  },
+  {
+   "ticker": "KXINX",
+   "title": "S&P 500 range",
+   "category": "Financials",
+   "frequency": "daily",
+   "volume_fp": "135326895.00",
+   "tags": [
+    "Markets",
+    "Indices"
+   ]
+  },
+  {
+   "ticker": "KXIPOOPENAI",
+   "title": "When will OPENAI Announce IPO?",
+   "category": "Financials",
+   "frequency": "one_off",
+   "volume_fp": "1411197.00",
+   "tags": [
+    "IPOs",
+    "Companies"
+   ]
+  }
+ ]
+}

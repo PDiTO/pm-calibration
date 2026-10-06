@@ -1,0 +1,38 @@
+{
+ "KXCPI": {
+  "series_title": "CPI",
+  "tags": "Inflation"
+ },
+ "KXEPLGAME": {
+  "series_title": "English Premier League Game",
+  "tags": "Soccer"
+ },
+ "KXFEDDECISION": {
+  "series_title": "Fed meeting",
+  "tags": "Fed"
+ },
+ "KXGRAMBNA": {
+  "series_title": "Grammy for Best New Artist",
+  "tags": "Awards,Grammys"
+ },
+ "KXHIGHLAX": {
+  "series_title": "Highest temperature in Los Angeles",
+  "tags": "Daily temperature"
+ },
+ "KXMLBGAME": {
+  "series_title": "Professional Baseball Game",
+  "tags": "Baseball"
+ },
+ "KXMLBTOTAL": {
+  "series_title": "Pro Baseball Total Points",
+  "tags": "Baseball"
+ },
+ "KXNCAAWBGAME": {
+  "series_title": "College Basketball Women's Game",
+  "tags": "Basketball"
+ },
+ "KXVMA": {
+  "series_title": "who will win VMA award ",
+  "tags": "Awards,VMA"
+ }
+}

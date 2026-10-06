@@ -1,0 +1,136 @@
+{
+ "markets": [
+  {
+   "id": "1421535",
+   "question": "Will Korn Ferry (KFY) beat quarterly earnings?",
+   "conditionId": "0x9eea6255ed05b3e87ecfc99ba34b8349ed18cab9264ca84151e438aaf6880f35",
+   "slug": "kfy-quarterly-earnings-nongaap-eps-03-10-2026-1pt23",
+   "endDate": "2026-03-10T13:00:00Z",
+   "startDate": "2026-02-23T22:17:52.743443Z",
+   "createdAt": "2026-02-23T22:14:44.090501Z",
+   "closedTime": "2026-03-09 13:29:39+00",
+   "acceptingOrdersTimestamp": "2026-02-23T22:16:46Z",
+   "outcomes": "[\"Yes\", \"No\"]",
+   "outcomePrices": "[\"1\", \"0\"]",
+   "clobTokenIds": "[\"70251870569857691941692888194981799611839172650813156528342906197565200810507\", \"114228535647726895580074724069286491129689352199907880430578570035371031137896\"]",
+   "enableOrderBook": true,
+   "negRisk": false,
+   "negRiskOther": false,
+   "umaResolutionStatus": "resolved",
+   "closed": true,
+   "tags": [
+    {
+     "id": "1013",
+     "label": "Earnings",
+     "slug": "earnings"
+    },
+    {
+     "id": "102676",
+     "label": "Equities",
+     "slug": "equities"
+    },
+    {
+     "id": "102169",
+     "label": "Hide From New",
+     "slug": "hide-from-new"
+    },
+    {
+     "id": "120",
+     "label": "Finance",
+     "slug": "finance"
+    },
+    {
+     "id": "103556",
+     "label": "KFY",
+     "slug": "kfy"
+    }
+   ],
+   "events": [
+    {
+     "id": "226378",
+     "title": "Will Korn Ferry (KFY) beat quarterly earnings?",
+     "slug": "kfy-quarterly-earnings-nongaap-eps-03-10-2026-1pt23",
+     "seriesSlug": "kfy-earnings",
+     "startTime": "2026-03-10T13:00:00Z",
+     "endDate": "2026-03-10T13:00:00Z",
+     "negRisk": false,
+     "negRiskAugmented": false,
+     "closed": true,
+     "series": [
+      {
+       "id": "11244",
+       "slug": "kfy-earnings",
+       "recurrence": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "1421540",
+   "question": "Will Kohls (KSS) beat quarterly earnings?",
+   "conditionId": "0xb819eecb4a37e3e629a590f3f90f9bd8483d8ced0f23985cff1ae8ba799825c8",
+   "slug": "kss-quarterly-earnings-gaap-eps-03-10-2026-0pt72",
+   "endDate": "2026-03-10T13:00:00Z",
+   "startDate": "2026-02-23T22:21:12.750079Z",
+   "createdAt": "2026-02-23T22:18:09.260989Z",
+   "closedTime": "2026-03-10 13:21:43+00",
+   "acceptingOrdersTimestamp": "2026-02-23T22:20:06Z",
+   "outcomes": "[\"Yes\", \"No\"]",
+   "outcomePrices": "[\"1\", \"0\"]",
+   "clobTokenIds": "[\"91365721448152229486279963689337456239580843298607073179777986259771891907614\", \"95539004662181386152956917735955625559089186872075371357510755080137123361854\"]",
+   "enableOrderBook": true,
+   "negRisk": false,
+   "negRiskOther": false,
+   "umaResolutionStatus": "resolved",
+   "closed": true,
+   "tags": [
+    {
+     "id": "1013",
+     "label": "Earnings",
+     "slug": "earnings"
+    },
+    {
+     "id": "102169",
+     "label": "Hide From New",
+     "slug": "hide-from-new"
+    },
+    {
+     "id": "102676",
+     "label": "Equities",
+     "slug": "equities"
+    },
+    {
+     "id": "120",
+     "label": "Finance",
+     "slug": "finance"
+    },
+    {
+     "id": "103887",
+     "label": "KSS",
+     "slug": "kss"
+    }
+   ],
+   "events": [
+    {
+     "id": "226383",
+     "title": "Will Kohls (KSS) beat quarterly earnings?",
+     "slug": "kss-quarterly-earnings-gaap-eps-03-10-2026-0pt72",
+     "seriesSlug": "kss-earnings",
+     "startTime": "2026-03-10T13:00:00Z",
+     "endDate": "2026-03-10T13:00:00Z",
+     "negRisk": false,
+     "negRiskAugmented": false,
+     "closed": true,
+     "series": [
+      {
+       "id": "11245",
+       "slug": "kss-earnings",
+       "recurrence": null
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

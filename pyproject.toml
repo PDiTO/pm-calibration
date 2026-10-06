@@ -1,0 +1,71 @@
+[project]
+name = "pm-calibration"
+version = "0.1.0"
+description = "Are prediction market prices calibrated? A study of resolved Polymarket and Kalshi markets from public data."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Paul Davis" }]
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "httpx>=0.27",
+    "matplotlib>=3.9",
+    "numpy>=2.0",
+    "pandas>=2.2",
+    "pyarrow>=17",
+    "scipy>=1.13",
+]
+keywords = ["prediction-markets", "calibration", "polymarket", "kalshi", "brier-score", "favorite-longshot-bias"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Office/Business :: Financial :: Investment",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
+
+[project.scripts]
+pmcal = "pmcal.cli:main"
+
+[dependency-groups]
+# scikit-learn is used only inside tests, as a reference implementation for the
+# isotonic and logistic fits. Nothing in src/ imports it.
+dev = [
+    "hypothesis>=6.100",
+    "mypy>=1.13",
+    "pandas-stubs>=2.2",
+    "pytest>=8.3",
+    "ruff>=0.8",
+    "scikit-learn>=1.5",
+]
+
+[build-system]
+requires = ["uv_build>=0.8.13,<0.13"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "pmcal"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "B", "UP", "SIM", "C4", "N", "PT", "RUF", "NPY"]
+# Statistics notation: single-letter capitals (X, N, K) follow the literature.
+ignore = ["N803", "N806"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["pmcal"]
+
+[tool.mypy]
+python_version = "3.12"
+files = ["src", "tests"]
+strict = true
+warn_unreachable = true
+
+[[tool.mypy.overrides]]
+module = ["scipy.*", "sklearn.*", "matplotlib.*", "pyarrow.*"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

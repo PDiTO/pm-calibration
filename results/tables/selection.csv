@@ -1,0 +1,29 @@
+step,kalshi,polymarket
+sampled contracts,54289,118305
+sampled events,13404,20036
+resolved,54004,118083
+void,0,0
+split,285,202
+unresolved,0,20
+early close (>1d before schedule),6656,17214
+30d: open & priced,8828,16916
+30d: live (quote or trade),4966,8558
+30d: confirmed quote,2774,3214
+14d: open & priced,13602,25844
+14d: live (quote or trade),6957,11612
+14d: confirmed quote,3528,4148
+7d: open & priced,15865,44420
+7d: live (quote or trade),8921,18614
+7d: confirmed quote,4358,8006
+3d: open & priced,25255,72007
+3d: live (quote or trade),16447,36990
+3d: confirmed quote,9357,13630
+1d: open & priced,34128,94166
+1d: live (quote or trade),25843,58383
+1d: confirmed quote,15752,21435
+6h: open & priced,37967,94781
+6h: live (quote or trade),32227,67680
+6h: confirmed quote,20070,22860
+1h: open & priced,38119,91473
+1h: live (quote or trade),33485,69530
+1h: confirmed quote,20638,21865
