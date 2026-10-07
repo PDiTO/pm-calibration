@@ -14,6 +14,8 @@ Short version of what I found:
 - **There is nothing for a simple recalibration to fix.** Walk-forward, refitting weekly on markets that had already resolved, the out-of-sample change in Brier score from Platt scaling has an interval containing zero at every horizon on both venues, and at 1 day out it is under 0.1%. Isotonic regression made it slightly worse.
 - **How the sample is built moves the answer more than any of the above.** Keeping only markets with $10k of lifetime volume turns Kalshi's intercept to +0.38. Anchoring on the actual close instead of the scheduled time turns the intercept of early-closing Polymarket markets to +0.65. Scoring stale prices as if they were live makes Polymarket look like it overprices YES, with an intercept of −0.28.
 
+The same write-up is typeset as a PDF with all eight figures in [`report/pm-calibration-report.pdf`](report/pm-calibration-report.pdf).
+
 ## Contents
 
 - [The data](#the-data)
@@ -307,7 +309,8 @@ src/pmcal/
   report.py, plots.py    results/
   cli.py                 pmcal index | match | sample | prices | build | report
 configs/main.toml        the configuration behind the results
-results/                 report.md, summary.json, figures/, tables/
+results/                 report.md, summary.json, figures/ (PNG and SVG), tables/
+report/                  the PDF write-up, its HTML source and build.sh
 tests/                   offline tests with fixtures from the real APIs
 ```
 

@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Are prediction market prices calibrated?</title>
+<meta name="author" content="Paul Davis">
+<meta name="description" content="A calibration study of Polymarket and Kalshi prices, January to September 2026, from public data.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="title-block">
+  <p class="kicker">Research note</p>
+  <h1>Are prediction market prices calibrated?</h1>
+  <p class="subtitle">Polymarket and Kalshi, January to September 2026</p>
+  <p class="byline"><span class="author">Paul Davis</span><span class="sep">·</span>October 2026</p>
+</header>
+
+<section class="abstract">
+  <p>This study asks whether a contract trading at 70% on Polymarket or Kalshi resolves YES about 70% of the time. It uses only the venues' public APIs and checks every forecast against a price that existed before the outcome was known. The sample covers 118,305 Polymarket and 54,289 Kalshi contracts scheduled to resolve between 1 January and 30 September 2026.</p>
+</section>
+
+<p>I kept seeing "prediction markets are well calibrated" charts with one or two of the same problems. They take the price at a fixed time before the market <em>actually</em> closed, which for markets that resolve early means picking the snapshot with the outcome. They use the last trade of a market that hadn't traded for days. Or they only keep markets above some volume, and volume comes after the price you are scoring. I wanted to see what the answer looks like with those holes closed, on 2026 data from both venues.</p>
+
+<h2 class="unnumbered">Summary</h2>
+
+<ul class="findings">
+  <li><strong>Where there was a real two-sided market, prices were close to calibrated on both venues.</strong> One day before scheduled resolution, the logistic calibration slope is b&nbsp;=&nbsp;1.05 [1.01,&nbsp;1.10] on Polymarket, across 18,228 contracts, and 1.06 [1.01,&nbsp;1.11] on Kalshi, across 10,477. The intercept is −0.01 [−0.05,&nbsp;0.03] and −0.03 [−0.08,&nbsp;0.03]. A slope of 1 and intercept of 0 is perfect calibration. The reliability term of the Brier score is indistinguishable from zero on both.</li>
+  <li><strong>There is a small favourite-longshot bias, and it lives at the cheap end.</strong> A slope a little above 1 means cheap contracts are slightly overpriced and expensive ones slightly underpriced. Both slopes exclude 1 at the usual 95% level but not at 99.5%, the level I set in advance for my ten primary comparisons, so this is suggestive rather than settled. Buying contracts priced 2 to 5 cents lost about 21% per dollar on Polymarket and 29% on Kalshi at the mid, before fees, with wide intervals. Above 20 cents the average return is within 5% of zero on both venues.</li>
+  <li><strong>Thin markets lean towards YES.</strong> Where the only price was the last trade, because nobody was quoting a tight market, YES was overpriced: intercept −0.21 [−0.28,&nbsp;−0.15] on Polymarket and −0.47 [−0.56,&nbsp;−0.38] on Kalshi. In those markets the last print is often someone buying at a wide ask.</li>
+  <li><strong>Prices get sharper as resolution approaches, and stay about as calibrated.</strong> On the same contracts, the Brier score falls from 0.112 thirty days out to 0.049 one day out on Polymarket, and from 0.165 to 0.098 on Kalshi. The slope and intercept show no consistent change over the same span.</li>
+  <li><strong>The two venues price the same sports line the same way.</strong> On 2,840 sports lines listed on both and priced at the same moment one day before the start, the median price difference is half a cent, and the Brier scores differ by 0.0002 [−0.0001,&nbsp;0.0005].</li>
+  <li><strong>There is nothing for a simple recalibration to fix.</strong> Walk-forward, refitting weekly on markets that had already resolved, the out-of-sample change in Brier score from Platt scaling has an interval containing zero at every horizon on both venues, and at 1 day out it is under 0.1%. Isotonic regression made it slightly worse.</li>
+  <li><strong>How the sample is built moves the answer more than any of the above.</strong> Keeping only markets with $10k of lifetime volume turns Kalshi's intercept to +0.38. Anchoring on the actual close instead of the scheduled time turns the intercept of early-closing Polymarket markets to +0.65. Scoring stale prices as if they were live makes Polymarket look like it overprices YES, with an intercept of −0.28.</li>
+</ul>
+
+<h2>The data</h2>
+
+<p>Everything comes from public endpoints, with no accounts, keys or wallets.</p>
+
+<table class="text">
+  <thead><tr><th>venue</th><th>metadata</th><th>prices</th><th>trades</th></tr></thead>
+  <tbody>
+    <tr><td>Polymarket</td><td>Gamma <code>/markets/keyset</code> and <code>/events</code></td><td>CLOB <code>/prices-history</code>, daily for the whole life plus 10-minute points for the last 8 days</td><td>data-api <code>/trades</code>, one 24-hour window per snapshot</td></tr>
+    <tr><td>Kalshi</td><td><code>/series</code>, <code>/events</code> with nested markets, <code>/historical/markets</code></td><td>hourly candlesticks per market, live and historical tiers</td><td>not needed; the candles carry volume and bid/ask</td></tr>
+  </tbody>
+</table>
+
+<p>The study covers markets scheduled to resolve between 1 January and 30 September 2026.</p>
+
+<p>Both venues are much bigger than I expected. Polymarket closed about 26,000 markets with at least $1k of volume in a single September week, and Kalshi settled more than 3,000 markets in one hour, mostly hourly strike ladders. Listing everything and downloading every price history would have taken days, so the study works from a sampling frame and an event-level sample:</p>
+
+<table>
+  <thead><tr><th></th><th class="num">Polymarket</th><th class="num">Kalshi</th></tr></thead>
+  <tbody>
+    <tr><td>contracts in the frame</td><td class="num">1,331,687</td><td class="num">1,949,423</td></tr>
+    <tr><td>events in the frame</td><td class="num">193,923</td><td class="num">347,234</td></tr>
+    <tr><td>contracts sampled by design</td><td class="num">109,720</td><td class="num">45,460</td></tr>
+    <tr><td>events sampled by design</td><td class="num">17,797</td><td class="num">10,533</td></tr>
+    <tr><td>extra contracts matched across venues</td><td class="num">8,585</td><td class="num">8,829</td></tr>
+  </tbody>
+</table>
+
+<p>The frame is every market that resolved, traded at least once, and had its scheduled resolution time in the window. Three kinds are left out on purpose:</p>
+
+<ul>
+  <li>Short-duration crypto markets: the 5-minute and 15-minute up/down markets, and anything else in a crypto series that recurs more often than daily. These are a separate study, and there are hundreds of thousands of them.</li>
+  <li>Kalshi's hourly and 15-minute series and its multivariate combo markets.</li>
+  <li>Markets that only opened at or after their scheduled time, such as in-play props. No snapshot can exist before such a market opened.</li>
+</ul>
+
+<p>The sample is drawn by event, so a multi-outcome event is in or out as a whole. Each recurring series, such as a sports league, a city's daily temperature or a daily index range, is capped at 3 events per calendar month on Polymarket and 1 on Kalshi, chosen by a seeded hash, and events outside any series are all kept. Within a sampled event at most 12 contracts are kept on Polymarket and 6 on Kalshi, again at random. Kalshi gets the tighter caps because it lists thousands of small series, one per team, player or city, and its public API allows about 4 requests a second. Each contract's inclusion probability is stored, so population-weighted estimates are in the robustness table. The headline numbers are unweighted, which means they describe a population where no single series can dominate.</p>
+
+<p>A contract is one binary claim priced on its YES side. For Polymarket markets whose two outcomes are team names or Over/Under rather than Yes/No, the side is chosen by a hash of the market id, so a habit like listing the favourite first can't bias anything.</p>
+
+<p>The pipeline downloaded about 580,000 responses over roughly ten hours at polite rates, with the two venues running in parallel, and caches every one on disk. In offline mode it rebuilds everything from that cache and fails on any miss.</p>
+
+<h2>From a price history to a forecast</h2>
+
+<p>This is the part that decides whether the numbers mean anything, so here is each rule and why.</p>
+
+<p><strong>Anchor on the scheduled time, not the close.</strong> A snapshot at horizon <i>h</i> is the price at <i>t</i>&nbsp;=&nbsp;scheduled time&nbsp;−&nbsp;<i>h</i>. The scheduled time is fixed before the outcome: the game's start for sports on both venues, otherwise the scheduled end. Kalshi's <code>expected_expiration_time</code> turned out to be unreliable as a schedule. It is sometimes the deadline plus a settlement buffer, and for games it is the start plus three hours. So the Kalshi pipeline uses a precedence of game and event start times, strike dates, and expected expiration only where it is a real time. Anchoring on the actual close instead would pick, for a "will X happen by December" market that resolved YES in March, a price from February, and for one that resolved NO, a price from late December. That is choosing the snapshot time with the outcome.</p>
+
+<p><strong>Only while the market was open.</strong> A snapshot needs open ≤ <i>t</i> &lt; actual close. Whether a market is still open at <i>t</i> is known at <i>t</i>, so this filter conditions on nothing from the future. It does change the population: by the 1-day horizon, markets that already resolved early are gone.</p>
+
+<p><strong>Only prices from at or before <i>t</i>.</strong> The snapshot uses the last observation at or before <i>t</i>, and rejects it if it is older than <i>h</i>/4, clamped to between one hour and one day.</p>
+
+<p><strong>Only prices someone could trade near.</strong> A price needs evidence of a live market at <i>t</i>. I first tried a looser rule, and it was wrong, which is how I ended up with this one:</p>
+
+<ul>
+  <li>On Kalshi the hourly candles give the best bid and ask. A snapshot counts as a confirmed quote if the spread is tight on the log-odds scale, logit(ask)&nbsp;−&nbsp;logit(bid)&nbsp;≤&nbsp;0.402. That is a 10-cent spread at even odds, about 2 cents at 5%, and well under a cent at 1%. Measuring tightness this way matters in the tails, where a 10-cent spread on a 3-cent contract is no market at all. The price is the mid. Kalshi only emits a candle for an hour in which something changed, so quiet hours carry the last quote forward.</li>
+  <li>Polymarket's price history is the plain order-book midpoint, with no spread, even when the book is 0.01/0.99. In thin markets it reads 0.50 and moves whenever anyone posts a far-off quote. Before I caught this, markets with under $100 of lifetime volume had an average price of 0.34 against a YES rate of 0.21, and 14% of them sat within half a cent of 0.50. So on Polymarket a confirmed quote needs a trade in the previous 24 hours, and the midpoint has to lie within half that log-odds width of the trade.</li>
+  <li>Where there was no tight quote but there was a trade in the previous 24 hours, the snapshot is priced at that trade and labelled a last-trade price. These are analysed separately. Anything else is stale and dropped.</li>
+</ul>
+
+<p><strong>No lifetime volume floor.</strong> My first frame kept only markets with at least $1k of volume, a common choice. A review of the first results showed why that's a mistake. Lifetime volume includes everything traded after the snapshot, and upsets attract volume, so the floor selects on the outcome. In some multi-outcome events it dropped the winner. The frame now only requires that a market traded at all, and liquidity enters through what was known at <i>t</i>: whether there was a tight quote, and how much traded in the previous 24 hours.</p>
+
+<p><strong>Voided and split markets.</strong> Polymarket's 50-50 resolutions and Kalshi's scalar settlements of cancelled events have no binary outcome. They are 202 and 285 of the sampled contracts, and they are counted and dropped.</p>
+
+<p><strong>Multi-outcome events.</strong> Each outcome is its own binary contract, but outcomes of one event are not independent: exactly one resolves YES. So the bootstrap resamples whole clusters, never single contracts.</p>
+
+<h2>Statistics</h2>
+
+<p>For each venue and horizon:</p>
+
+<ul>
+  <li><strong>Brier score and its decomposition.</strong> With prices binned into ten bins, the Brier score splits into reliability, which measures miscalibration; resolution, which measures how far the prices separate outcomes; and uncertainty, the variance of the base rate. Two within-bin terms make the identity exact. Plug-in reliability is biased upwards in finite samples, so the tables report a debiased version that subtracts each bin's sampling variance. It is about zero for calibrated prices.</li>
+  <li><strong>ECE</strong>, the average gap between a bin's mean price and its YES rate, weighted by count. It is reported next to its noise floor, the ECE you would expect from perfectly calibrated prices with the same distribution, because plug-in ECE is never zero.</li>
+  <li><strong>Calibration regression</strong>, logit P(YES)&nbsp;=&nbsp;<i>a</i>&nbsp;+&nbsp;<i>b</i>&nbsp;·&nbsp;logit(price). <i>b</i>&nbsp;&gt;&nbsp;1 means prices are too close to 0.5, which is a favourite-longshot bias. <i>a</i>&nbsp;&lt;&nbsp;0 means the YES side is overpriced at every price. I fit <i>a</i> and <i>b</i> together on the contracts as listed. Fitting <i>b</i> alone on a symmetrised sample, which is the textbook way, folds any YES lean into <i>b</i>. In a simulation with no longshot bias and only a YES lean, it reported <i>b</i>&nbsp;=&nbsp;1.09.</li>
+  <li><strong>Intervals</strong> come from a cluster bootstrap with 1,000 draws. A cluster is a game, when a venue splits one game over several events, or an event. Clusters in the same category whose deadlines fall on the same UTC day are merged, because they share common shocks: one bitcoin path, one news day, one slate of games. That roughly doubles the width of the Brier intervals compared with event clusters.</li>
+  <li><strong>Pairing.</strong> Comparisons between horizons, venues and recalibration methods reuse the same bootstrap draws on both sides, so the interval on a difference is paired.</li>
+</ul>
+
+<p>The horizon comparison needs care. Requiring a price at every horizon from 30 days down to 1 hour keeps only markets that didn't resolve early, and for "by date" markets resolving early mostly means YES. So the population is fixed by a confirmed quote 30 days out, and each contract is re-scored at 7 days, 1 day and 1 hour with whatever live price it had then, while it was still open.</p>
+
+<p>I fixed ten primary estimands before the final run: for each venue, at the 1-day horizon, <i>b</i>, <i>a</i>, debiased reliability, the Brier change from 30 days to 1 day, and the Platt recalibration gain. For those, the results also have 99.5% intervals, the Bonferroni level for ten tests, computed from the bootstrap standard error because 1,000 draws can't place a 0.25% quantile. At that level only the two Brier improvements exclude zero. The slopes come out at [0.99,&nbsp;1.12] for Polymarket and [0.99,&nbsp;1.14] for Kalshi. Everything else in the tables is exploratory, and with dozens of categories, horizons and buckets some intervals will exclude the reference value by chance.</p>
+
+<h2>Results</h2>
+
+<h3>Calibration</h3>
+
+<p>One day before scheduled resolution, confirmed quotes only:</p>
+
+<table>
+  <thead><tr><th></th><th class="num">Polymarket</th><th class="num">Kalshi</th></tr></thead>
+  <tbody>
+    <tr><td>contracts</td><td class="num">18,228</td><td class="num">10,477</td></tr>
+    <tr><td>clusters</td><td class="num">1,588</td><td class="num">1,005</td></tr>
+    <tr><td>YES rate</td><td class="num">0.298</td><td class="num">0.393</td></tr>
+    <tr><td>mean price</td><td class="num">0.303</td><td class="num">0.401</td></tr>
+    <tr><td>Brier score</td><td class="num">0.121 [0.118, 0.125]</td><td class="num">0.171 [0.167, 0.175]</td></tr>
+    <tr><td>reliability, debiased</td><td class="num">0.0000 [−0.0002, 0.0001]</td><td class="num">0.0001 [−0.0002, 0.0003]</td></tr>
+    <tr><td>resolution</td><td class="num">0.087</td><td class="num">0.067</td></tr>
+    <tr><td>ECE / ECE if perfectly calibrated</td><td class="num">0.0067 / 0.0065</td><td class="num">0.0133 / 0.0099</td></tr>
+    <tr><td>slope <i>b</i></td><td class="num">1.05 [1.01, 1.10]</td><td class="num">1.06 [1.01, 1.11]</td></tr>
+    <tr><td>intercept <i>a</i></td><td class="num">−0.01 [−0.05, 0.03]</td><td class="num">−0.03 [−0.08, 0.03]</td></tr>
+  </tbody>
+</table>
+
+<figure class="wide">
+  <img src="../results/figures/reliability_1d.svg" alt="Reliability diagrams for Polymarket and Kalshi one day before scheduled resolution">
+  <figcaption><span class="fig">Figure 1.</span> Reliability one day before scheduled resolution, confirmed quotes only. Each point is one of ten price bins.</figcaption>
+</figure>
+
+<p>In every price decile the YES rate is within 1.4 percentage points of the average price on Polymarket and within 2.5 on Kalshi. Polymarket's ECE is at its noise floor, and Kalshi's is a little above it. The Brier scores differ a lot between venues, but that is the mix of markets, not skill: Kalshi's confirmed quotes are more often near-coin-flip sports lines, and the uncertainty term of the Brier score is larger when outcomes are closer to 50/50. The cross-venue section below compares like with like.</p>
+
+<p>The other horizons look much the same. Across 30, 14, 7, 3 and 1 days, 6 hours and 1 hour, <i>b</i> stays between 0.96 and 1.11 and <i>a</i> between −0.17 and +0.03. The one consistent difference is on Kalshi, where the intercept is about −0.1 from 30 days down to 3 days, with intervals that exclude zero at 30, 7 and 3 days: a mild YES lean far from resolution that is gone by the last day.</p>
+
+<h3>Favourite-longshot bias</h3>
+
+<p>The slope says prices are a little too close to 0.5. The return table says where that comes from. These are the average returns from buying every contract in a price bin, YES at <i>p</i> and NO at 1&nbsp;−&nbsp;<i>p</i>, at the quoted mid, before spread and fees:</p>
+
+<table>
+  <thead><tr><th>price paid</th><th class="num">Polymarket</th><th class="num">Kalshi</th></tr></thead>
+  <tbody>
+    <tr><td>0 to 2c</td><td class="num">−60% [−83, −32]</td><td class="num">too few</td></tr>
+    <tr><td>2 to 5c</td><td class="num">−21% [−45, +8]</td><td class="num">−29% [−61, +10]</td></tr>
+    <tr><td>5 to 10c</td><td class="num">−2% [−20, +16]</td><td class="num">−18% [−38, +3]</td></tr>
+    <tr><td>10 to 20c</td><td class="num">−6% [−15, +3]</td><td class="num">−14% [−24, −3]</td></tr>
+    <tr><td>20 to 80c</td><td class="num">within ±5%</td><td class="num">within ±5%</td></tr>
+    <tr><td>80 to 95c</td><td class="num">+0 to +1%</td><td class="num">+1.5 to +2.6%</td></tr>
+    <tr><td>95 to 100c</td><td class="num">+0.4 to +0.7%</td><td class="num">+0.9 to +1.2%</td></tr>
+  </tbody>
+</table>
+
+<figure class="wide">
+  <img src="../results/figures/longshot_returns_1d.svg" alt="Average return per dollar by price paid, both venues">
+  <figcaption><span class="fig">Figure 2.</span> Average return per dollar by price paid, one day out, at the mid and before fees. Kalshi's 0 to 2 cent bin holds 53 contracts, too few to read.</figcaption>
+</figure>
+
+<p>So the textbook favourite-longshot bias is there: long shots lose money and favourites make a little. It is confined to contracts under about 20 cents, and the intervals there are wide because cheap contracts rarely win. The two halves of the table are mirror images of each other, the same contracts bought from the other side, so they are not independent evidence. Two caveats keep me from reading much into the cheap end:</p>
+
+<ul>
+  <li>The returns are at the mid. For a 3-cent contract on a 1-cent tick, half a cent of spread is a sixth of the price. On Kalshi, where the bid is known, the loss shrinks at the bid: from −29% to −19% at 2 to 5 cents, from −18% to −9% at 5 to 10 cents, and from −14% to −7% at 10 to 20 cents.</li>
+  <li>Below about 2 cents, prices sit at the venue's minimum tick. Of Kalshi's live prices under 2 cents, 93% were exactly 1 cent, which is why almost none of them pass the tight-quote test. A contract whose fair value is 0.3% cannot trade at its fair value there.</li>
+</ul>
+
+<p>The YES lean shows up only in thin markets:</p>
+
+<table>
+  <thead><tr><th>one day out</th><th class="num">contracts</th><th class="num">slope <i>b</i></th><th class="num">intercept <i>a</i></th></tr></thead>
+  <tbody>
+    <tr><td>Polymarket, confirmed quote</td><td class="num">18,228</td><td class="num">1.05 [1.01, 1.10]</td><td class="num">−0.01 [−0.05, 0.03]</td></tr>
+    <tr><td>Polymarket, last trade</td><td class="num">36,410</td><td class="num">0.95 [0.92, 0.98]</td><td class="num">−0.21 [−0.28, −0.15]</td></tr>
+    <tr><td>Kalshi, confirmed quote</td><td class="num">10,477</td><td class="num">1.06 [1.01, 1.11]</td><td class="num">−0.03 [−0.08, 0.03]</td></tr>
+    <tr><td>Kalshi, last trade</td><td class="num">9,252</td><td class="num">0.99 [0.94, 1.05]</td><td class="num">−0.47 [−0.56, −0.38]</td></tr>
+  </tbody>
+</table>
+
+<p>A last-trade price is what you would see on a market page for a thin market, and in those markets YES is overpriced at every price level. Among Kalshi's last-trade rows, 52% of the trades were at or above the standing ask, and 37% of the books had no bid at all. The price there records what an eager YES buyer paid, not what the market thought.</p>
+
+<h3>Time to resolution</h3>
+
+<p>The 3,197 Polymarket and 2,702 Kalshi contracts that had a confirmed quote 30 days before their scheduled time, scored again as resolution approached:</p>
+
+<figure class="wide">
+  <img src="../results/figures/horizon_panel.svg" alt="Brier score, ECE and calibration slope for the same contracts at 30 days, 7 days, 1 day and 1 hour">
+  <figcaption><span class="fig">Figure 3.</span> The same contracts scored at four horizons. The Brier score falls steadily; the slope stays near 1.</figcaption>
+</figure>
+
+<table>
+  <thead><tr><th></th><th class="num">30 days</th><th class="num">7 days</th><th class="num">1 day</th><th class="num">1 hour</th></tr></thead>
+  <tbody>
+    <tr><td>Polymarket Brier</td><td class="num">0.112</td><td class="num">0.069</td><td class="num">0.049</td><td class="num">0.043</td></tr>
+    <tr><td>Kalshi Brier</td><td class="num">0.165</td><td class="num">0.102</td><td class="num">0.098</td><td class="num">0.085</td></tr>
+    <tr><td>Polymarket slope <i>b</i></td><td class="num">1.09</td><td class="num">1.06</td><td class="num">1.00</td><td class="num">0.98</td></tr>
+    <tr><td>Kalshi slope <i>b</i></td><td class="num">0.96</td><td class="num">1.14</td><td class="num">1.09</td><td class="num">0.98</td></tr>
+  </tbody>
+</table>
+
+<p>The Brier score improves by 0.062 [0.048,&nbsp;0.075] on Polymarket and 0.067 [0.042,&nbsp;0.091] on Kalshi between 30 days and 1 day out. These are the only primary estimands that clear the 99.5% level. Almost all of that is resolution: prices move towards the eventual outcome as information arrives. Calibration doesn't change in a way I can detect. Of the twelve slope and intercept changes from the 30-day value, only Kalshi's slope at 7 days excludes zero. The population shrinks over time, to 1,751 and 748 contracts at 1 hour, because markets close or stop trading. Both happen in ways known at the time, so it doesn't bias these numbers, but it does make the late horizons noisier.</p>
+
+<figure class="wide">
+  <img src="../results/figures/reliability_by_horizon.svg" alt="Reliability curves at four horizons for the contracts priced 30 days out">
+  <figcaption><span class="fig">Figure 4.</span> Reliability curves for the same contracts at each horizon, darker closer to resolution. No horizon sits consistently off the diagonal.</figcaption>
+</figure>
+
+<h3>Category, liquidity and venue</h3>
+
+<figure class="wide">
+  <img src="../results/figures/by_category_1d.svg" alt="Brier score, ECE and calibration slope by category, one day out">
+  <figcaption><span class="fig">Figure 5.</span> Brier score, ECE and calibration slope by category, one day out.</figcaption>
+</figure>
+
+<p>The biggest departures from <i>b</i>&nbsp;=&nbsp;1 are in strike ladders. Kalshi's weather markets, <i>b</i>&nbsp;=&nbsp;1.39 [1.17,&nbsp;1.69], and finance markets, <i>b</i>&nbsp;=&nbsp;1.58 [1.22,&nbsp;2.07], are ranges and thresholds on one underlying number, and so is Polymarket's crypto category, <i>b</i>&nbsp;=&nbsp;1.23 [1.06,&nbsp;1.45]. In a ladder the cheap rungs far from the current value are overpriced and the likely rungs underpriced, which is a favourite-longshot bias inside each event. Sports, politics and economics sit close to <i>b</i>&nbsp;=&nbsp;1 on both venues. Culture leans towards YES on Kalshi, with <i>a</i>&nbsp;=&nbsp;−0.17 [−0.29,&nbsp;−0.06]. Much of that category is "will X say Y" mention markets. These are exploratory: there are 16 venue-category cells, and I would expect one to look odd by chance.</p>
+
+<p>Liquidity measured at the time of the snapshot makes little difference among confirmed quotes. On both venues, markets with heavy trading in the previous 24 hours and markets with a little trading have slopes and intercepts within each other's intervals. Lifetime volume tells a different story, but for the wrong reason, which is in the section on sample construction.</p>
+
+<p><strong>The same proposition on both venues.</strong> The matching step found 155,880 pairs of contracts listed on both venues, by league, start time and team names for games, and by exact bracket, strike and date for Fed decisions, CPI prints, elections, awards and golf. I read 285 pairs side by side with both venues' resolution rules and found one error, a class of pairing I then excluded. Of the resolved pairs, 99.99% resolved the same way on both venues. The handful that disagreed were mostly soccer spreads and totals that one venue settled on a different score.</p>
+
+<p>A subset of these pairs, with both contracts downloaded and both priced at the same moment with a confirmed quote:</p>
+
+<table class="compact">
+  <thead><tr><th>one day out</th><th class="num">pairs</th><th class="num">clusters</th><th class="num">Polymarket Brier</th><th class="num">Kalshi Brier</th><th class="num">Kalshi − Polymarket</th><th class="num">median price gap</th></tr></thead>
+  <tbody>
+    <tr><td>sports lines</td><td class="num">2,840</td><td class="num">998</td><td class="num">0.1935</td><td class="num">0.1937</td><td class="num">+0.0002 [−0.0001, +0.0005]</td><td class="num">0.5c</td></tr>
+    <tr><td>golf, awards, elections, macro</td><td class="num">185</td><td class="num">102</td><td class="num">0.1147</td><td class="num">0.1130</td><td class="num">−0.0017 [−0.0044, +0.0008]</td><td class="num">1.0c</td></tr>
+  </tbody>
+</table>
+
+<figure class="narrow">
+  <img src="../results/figures/cross_venue_1d.svg" alt="Scatter of Polymarket against Kalshi prices for the same sports lines">
+  <figcaption><span class="fig">Figure 6.</span> Each point is one sports line listed on both venues, priced at the same moment one day before the start and coloured by outcome.</figcaption>
+</figure>
+
+<p>On sports the two venues are, for practical purposes, one market. Only 0.2% of pairs differed by 5 cents or more. The equal Brier scores follow from the equal prices, so the right reading is that the venues price sports the same, not that they are equally good forecasters by some independent measure. The other families are too few to say much. Before I applied the same price rule to both sides of each pair, Kalshi looked clearly better on golf and awards. That difference came from midpoints in thin Polymarket golf books.</p>
+
+<h3>Recalibration</h3>
+
+<p>If prices were systematically off, a map learned from past markets should improve future ones. I fitted two: Platt scaling, a logistic regression of the outcome on logit(price), and isotonic regression, with block values shrunk towards the price where data are thin. Each is refitted every 7 days on contracts that had resolved by then, and applied only to snapshots taken after the refit. Splitting by resolution date alone wouldn't be enough: a 30-day-ahead snapshot is taken a month before its own resolution, when outcomes that resolved in between were still unknown.</p>
+
+<figure class="wide">
+  <img src="../results/figures/recalibration.svg" alt="Out-of-sample Brier improvement from Platt and isotonic recalibration by horizon">
+  <figcaption><span class="fig">Figure 7.</span> Out-of-sample change in Brier score from walk-forward recalibration. Above zero, the recalibrated forecast beat the raw price.</figcaption>
+</figure>
+
+<p>Platt scaling's gain is within ±0.7% of the raw Brier score at every horizon on both venues, and its interval includes zero everywhere. At 1 day out it is −0.04% on Polymarket and −0.08% on Kalshi. Isotonic regression is slightly but significantly worse than the raw price close to resolution, by 0.25 to 0.3% at 1 day and 1 hour on Polymarket and at 1 hour on Kalshi. A slope of 1.05 is too small a distortion for a recalibration fitted on a few thousand past markets to correct without adding more noise than it removes.</p>
+
+<h2>Three ways to get a different answer</h2>
+
+<p>These come from the robustness table, one day out unless stated:</p>
+
+<table>
+  <thead><tr><th>variant</th><th>venue</th><th class="num">contracts</th><th class="num">slope <i>b</i></th><th class="num">intercept <i>a</i></th></tr></thead>
+  <tbody>
+    <tr><td>main: confirmed quotes</td><td>Polymarket</td><td class="num">18,228</td><td class="num">1.05 [1.01, 1.10]</td><td class="num">−0.01 [−0.05, 0.03]</td></tr>
+    <tr><td>main: confirmed quotes</td><td>Kalshi</td><td class="num">10,477</td><td class="num">1.06 [1.01, 1.11]</td><td class="num">−0.03 [−0.08, 0.03]</td></tr>
+    <tr><td>lifetime volume ≥ $10k</td><td>Polymarket</td><td class="num">8,948</td><td class="num">0.92 [0.87, 0.98]</td><td class="num">+0.09 [0.03, 0.14]</td></tr>
+    <tr><td>lifetime volume ≥ $10k</td><td>Kalshi</td><td class="num">3,397</td><td class="num">0.72 [0.64, 0.81]</td><td class="num">+0.38 [0.29, 0.46]</td></tr>
+    <tr><td>anchored on actual close, early closers</td><td>Polymarket</td><td class="num">15,686</td><td class="num">1.43 [1.34, 1.56]</td><td class="num">+0.65 [0.39, 0.96]</td></tr>
+    <tr><td>stale prices included</td><td>Polymarket</td><td class="num">86,216</td><td class="num">1.13 [1.10, 1.16]</td><td class="num">−0.28 [−0.32, −0.23]</td></tr>
+    <tr><td>stale prices included</td><td>Kalshi</td><td class="num">27,253</td><td class="num">1.06 [1.02, 1.10]</td><td class="num">−0.15 [−0.20, −0.10]</td></tr>
+  </tbody>
+</table>
+
+<p><strong>A lifetime volume floor.</strong> Restricting to markets that traded $10k over their life makes YES look underpriced, with <i>a</i>&nbsp;=&nbsp;+0.38 on Kalshi, and makes the slope fall well below 1. The markets that end up with a lot of volume are disproportionately the ones where something surprising happened. On Kalshi the effect is stronger because dollar volume is contracts times price, and a contract that is heading to $1 trades at high prices late in its life. The same mechanism makes lifetime volume buckets useless for the liquidity question: on Kalshi the YES rate in the $100k to $1M bucket is 0.62 against an average price of 0.47.</p>
+
+<p><strong>Anchoring on the close.</strong> Markets that closed more than a day before their scheduled time have no 1-day snapshot under the scheduled anchor, because by then they were closed. Anchoring on the actual close brings them back in, priced one day before they closed. On Polymarket those prices underprice YES by a wide margin, with an intercept of +0.65. Markets that close early are mostly "by date" markets where the event happened, and the day before it happened the price was still low.</p>
+
+<figure class="narrow">
+  <img src="../results/figures/anchor_contrast.svg" alt="Reliability of early-closing markets under the scheduled-time and actual-close anchors">
+  <figcaption><span class="fig">Figure 8.</span> Contracts that closed early, priced 3 days before their scheduled time and 3 days before their actual close. Both venues pooled, without the liveness filter.</figcaption>
+</figure>
+
+<p><strong>Stale prices.</strong> Treating every last print as a price, including ones days old, gives Polymarket an intercept of −0.28: YES apparently overpriced across the board. That is mostly thin markets with an empty book, whose midpoint sits near 0.50 whatever the odds.</p>
+
+<p>Other checks that don't change the main result: weighting each event once instead of each contract, which gives <i>b</i>&nbsp;=&nbsp;1.06 on both venues, keeping only binary markets or only multi-outcome events, dropping prices below 2c or above 98c, using the last trade instead of the mid in markets that traded in the previous hour, and coarser or finer bootstrap clusters. Population weighting does move Polymarket, to <i>b</i>&nbsp;=&nbsp;0.85 [0.75,&nbsp;0.96], because the weights put most of the mass on sports, where a handful of very active series carry very large weights. The design effect of those weights is about 11, so the weighted estimate has the precision of roughly 1,700 contracts, and I don't lean on it.</p>
+
+<h2>What I take from this</h2>
+
+<ol>
+  <li>When there is a real market, with someone quoting both sides close together, prediction market prices in 2026 are close to calibrated on both venues, one day out and thirty. The remaining distortion is a small favourite-longshot bias, mostly in contracts under 20 cents, and on Kalshi between a third and a half of it is the spread itself.</li>
+  <li>Where a YES lean shows up in this data, it is a thin-market effect. A market page showing the last trade of an illiquid contract is showing what an eager buyer paid.</li>
+  <li>Most of the work in a study like this is deciding what counts as a price and which markets count at all. Three common shortcuts each move the intercept by more than the effect being measured.</li>
+  <li>Polymarket and Kalshi agree to within half a cent on the same sports line. Whatever separates them in the per-venue tables is the mix of markets each lists.</li>
+</ol>
+
+<h2>Limitations</h2>
+
+<ul>
+  <li><strong>One window.</strong> Nine months of 2026. The walk-forward needs a few weeks of resolved markets before its first refit, which leaves the 30-day Polymarket recalibration with only 140 test clusters.</li>
+  <li><strong>The sample is capped.</strong> The headline describes a population where each series contributes at most a few events a month. Population-weighted estimates are noisier and lean towards sports.</li>
+  <li><strong>Different rules on each venue.</strong> Kalshi gives bid and ask; Polymarket gives a midpoint and trades. The confirmed-quote rules are meant to say the same thing, but 25% of Kalshi's confirmed quotes had no trade in the previous day, which the Polymarket rule cannot allow. Per-venue numbers are not a venue comparison; the matched pairs are.</li>
+  <li><strong>Returns ignore costs.</strong> Every return is at the mid, before spread and fees. Kalshi's fees are largest in relative terms on cheap contracts.</li>
+  <li><strong>Anchors come from today's metadata.</strong> Polymarket's end dates and game start times are the current values, so postponements and edits are applied after the fact.</li>
+  <li><strong>Some markets are missing.</strong> About 0.3% of non-crypto Polymarket markets with null volume in Gamma had in fact traded, and are not in the frame. Kalshi series that are hourly today but listed daily markets earlier in 2026 are skipped whole.</li>
+  <li><strong>ECE in the tails.</strong> Ten equal bins put everything from 0 to 10 cents in one bin, so a low ECE says little about the tails. The return table and the slope are the better guides there.</li>
+</ul>
+
+<h2 class="unnumbered">Reproducing the study</h2>
+
+<p>The code, configuration and full results are in the <code>pm-calibration</code> repository. <code>results/report.md</code> has every table at every horizon, and <code>results/tables</code> has the CSV behind every figure. The tests are offline and take about 20 seconds:</p>
+
+<pre>uv sync
+PMCAL_OFFLINE=1 uv run pytest</pre>
+
+<p>Reproducing the study from scratch downloads about 6&nbsp;GB, and took about ten hours with the two venues in parallel:</p>
+
+<pre>uv run pmcal index  --venue all     # list the sampling frame
+uv run pmcal match                  # pair the same proposition across venues
+uv run pmcal sample --venue all     # draw the event-level sample
+uv run pmcal prices --venue all     # price histories and trade windows
+PMCAL_OFFLINE=1 uv run pmcal build --venue all
+PMCAL_OFFLINE=1 uv run pmcal match
+PMCAL_OFFLINE=1 uv run pmcal report</pre>
+
+<p>This document is built from <code>report/report.html</code> with <code>report/build.sh</code>, using the figures that <code>pmcal report</code> writes.</p>
+
+</body>
+</html>

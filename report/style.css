@@ -1,0 +1,242 @@
+/* Print layout for report.html. Body in P052 (a Palatino design), headings, tables and
+   captions in Ubuntu Sans. Colours follow src/pmcal/plots.py. */
+
+@page {
+  size: A4;
+  margin: 22mm 21mm 24mm 21mm;
+
+  @bottom-left {
+    content: "Paul Davis · Are prediction market prices calibrated?";
+    font: 7.5pt "Ubuntu Sans", sans-serif;
+    color: #898781;
+  }
+
+  @bottom-right {
+    content: counter(page);
+    font: 7.5pt "Ubuntu Sans", sans-serif;
+    color: #898781;
+  }
+}
+
+@page :first {
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+}
+
+:root {
+  --ink: #0b0b0b;
+  --ink-2: #3d3c39;
+  --muted: #898781;
+  --rule: #c3c2b7;
+  --hair: #e1e0d9;
+  --accent: #2a78d6;
+  --sans: "Ubuntu Sans", "DejaVu Sans", sans-serif;
+  --serif: "P052", "DejaVu Serif", serif;
+}
+
+html {
+  font-family: var(--serif);
+  font-size: 10pt;
+  line-height: 1.47;
+  color: var(--ink);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body {
+  margin: 0;
+  counter-reset: h2 figure;
+}
+
+p {
+  margin: 0 0 0.62em;
+  orphans: 3;
+  widows: 3;
+}
+
+/* A sentence that introduces a table or figure stays on its page. */
+p:has(+ table), p:has(+ figure), p:has(+ pre) { break-after: avoid; }
+
+strong { font-weight: bold; }
+
+code {
+  font-family: "DejaVu Sans Mono", monospace;
+  font-size: 0.8em;
+  color: var(--ink-2);
+}
+
+pre {
+  font-family: "DejaVu Sans Mono", monospace;
+  font-size: 7.6pt;
+  line-height: 1.5;
+  background: #f4f3ef;
+  border-radius: 3px;
+  padding: 7pt 9pt;
+  margin: 0.3em 0 0.9em;
+  white-space: pre-wrap;
+  break-inside: avoid;
+}
+
+/* Title block -------------------------------------------------------------- */
+
+.title-block {
+  margin: 6mm 0 7mm;
+  padding-bottom: 6mm;
+  border-bottom: 0.8pt solid var(--ink);
+}
+
+.kicker {
+  font: 600 7.5pt var(--sans);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 3mm;
+}
+
+h1 {
+  font-family: var(--serif);
+  font-weight: bold;
+  font-size: 25pt;
+  line-height: 1.12;
+  margin: 0 0 2.5mm;
+  letter-spacing: -0.005em;
+}
+
+.subtitle {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 13pt;
+  color: var(--ink-2);
+  margin: 0 0 5mm;
+}
+
+.byline {
+  font: 9pt var(--sans);
+  color: var(--ink-2);
+  margin: 0;
+}
+
+.byline .author { font-weight: 600; color: var(--ink); }
+.byline .sep { margin: 0 0.5em; color: var(--muted); }
+
+.abstract p {
+  font-size: 10.5pt;
+  line-height: 1.5;
+  margin-bottom: 0.9em;
+}
+
+/* Headings ----------------------------------------------------------------- */
+
+h2, h3 {
+  font-family: var(--sans);
+  color: var(--ink);
+  break-after: avoid;
+}
+
+h2 {
+  font-size: 13pt;
+  font-weight: 650;
+  margin: 1.5em 0 0.55em;
+  counter-increment: h2;
+  counter-reset: h3;
+}
+
+h2::before {
+  content: counter(h2);
+  display: inline-block;
+  width: 1.6em;
+  color: var(--accent);
+}
+
+h2.unnumbered { counter-increment: none; }
+h2.unnumbered::before { content: none; }
+
+h3 {
+  font-size: 10.5pt;
+  font-weight: 650;
+  margin: 1.25em 0 0.45em;
+  counter-increment: h3;
+}
+
+h3::before {
+  content: counter(h2) "." counter(h3);
+  display: inline-block;
+  width: 2.45em;
+  color: var(--accent);
+}
+
+/* Lists -------------------------------------------------------------------- */
+
+ul, ol {
+  margin: 0 0 0.75em;
+  padding-left: 1.25em;
+}
+
+li { margin-bottom: 0.38em; }
+li::marker { color: var(--muted); }
+
+ul.findings {
+  list-style: none;
+  padding: 0;
+}
+
+ul.findings li {
+  border-left: 2pt solid var(--hair);
+  padding: 0.05em 0 0.05em 0.85em;
+  margin-bottom: 0.6em;
+  break-inside: avoid;
+}
+
+/* Tables ------------------------------------------------------------------- */
+
+table {
+  border-collapse: collapse;
+  margin: 0.55em 0 1.05em;
+  font-family: var(--sans);
+  font-size: 8.3pt;
+  line-height: 1.35;
+  font-variant-numeric: tabular-nums;
+  border-top: 0.8pt solid var(--ink);
+  border-bottom: 0.8pt solid var(--ink);
+  break-inside: avoid;
+}
+
+th, td {
+  padding: 2.6pt 9pt 2.6pt 0;
+  text-align: left;
+  vertical-align: top;
+}
+
+th:last-child, td:last-child { padding-right: 0; }
+
+th {
+  font-weight: 600;
+  color: var(--ink-2);
+  border-bottom: 0.5pt solid var(--rule);
+}
+
+tbody tr + tr td { border-top: 0.4pt solid var(--hair); }
+
+.num { text-align: right; white-space: nowrap; }
+
+table.text { width: 100%; }
+table.text td:first-child { font-weight: 600; white-space: nowrap; }
+table.compact th, table.compact td { padding-right: 6pt; }
+
+/* Figures ------------------------------------------------------------------ */
+
+figure {
+  margin: 1em 0 1.15em;
+  break-inside: avoid;
+}
+
+figure img { display: block; width: 100%; height: auto; }
+figure.narrow img { width: 62%; margin: 0 auto; }
+
+figcaption {
+  font: 8pt/1.4 var(--sans);
+  color: var(--ink-2);
+  margin-top: 0.5em;
+}
+
+figcaption .fig { font-weight: 650; color: var(--ink); margin-right: 0.3em; }

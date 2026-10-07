@@ -1,4 +1,4 @@
-"""Figures for the report, as static PNGs.
+"""Figures for the report, as static PNGs, with an SVG copy of each for print.
 
 One look across every figure: a near-white surface, hairline gridlines,
 recessive axes, thin marks, and a fixed colour per entity. Polymarket is
@@ -79,6 +79,7 @@ def _style() -> None:
 def _save(fig: Figure, path: Path) -> Path:
     path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(path, dpi=DPI, bbox_inches="tight")
+    fig.savefig(path.with_suffix(".svg"), bbox_inches="tight", metadata={"Date": None})
     plt.close(fig)
     return path
 
@@ -430,7 +431,9 @@ def anchor_contrast(
     ax.set_aspect("equal", adjustable="box")
     ax.set_xlabel("price")
     ax.set_ylabel("share that resolved YES")
-    ax.legend(loc="upper left")
+    # Early closers are mostly "by date" markets that resolved YES, so the curves sit above
+    # the diagonal and the lower right is empty.
+    ax.legend(loc="lower right")
     ax.set_title(title, loc="left")
     if caption:
         _caption(fig, caption)
