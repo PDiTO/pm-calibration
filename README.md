@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/logo.png" alt="pm-calibration logo" width="220">
+</p>
+
 # pm-calibration
 
 A calibration study of prediction market prices on Polymarket and Kalshi, built only from their public APIs. It asks whether a contract trading at 70% resolves YES about 70% of the time, and checks every forecast against a price that existed before the outcome was known.
